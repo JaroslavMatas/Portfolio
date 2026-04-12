@@ -8,17 +8,17 @@
 
   --card-bg: linear-gradient(
     97.6deg,
-    rgba(255, 255, 255, 0.11) 0%,
-    rgba(255, 255, 255, 0.06) 29.43%,
-    rgba(255, 255, 255, 0.06) 100%
+    rgba(0, 0, 0, 0.04) 0%,
+    rgba(0, 0, 0, 0.025) 29.43%,
+    rgba(0, 0, 0, 0.03) 100%
   );
 
   --card-border-gradient: linear-gradient(
     var(--card-border-angle),
-    rgba(255, 255, 255, 0.45) 8.56%,
-    rgba(255, 255, 255, 0.0001) 37.96%,
-    rgba(255, 255, 255, 0.0001) 50.19%,
-    rgba(255, 255, 255, 0.15) 80.06%
+    rgba(0, 0, 0, 0.14) 8.56%,
+    rgba(0, 0, 0, 0.02) 37.96%,
+    rgba(0, 0, 0, 0.02) 50.19%,
+    rgba(0, 0, 0, 0.1) 80.06%
   );
 }
 
@@ -35,15 +35,15 @@
   --card-border-angle: 134.62deg;
   --card-border-gradient: linear-gradient(
     var(--card-border-angle),
-    rgba(255, 255, 255, 0.45) 8.56%,
-    rgba(255, 255, 255, 0.0001) 37.96%,
-    rgba(255, 255, 255, 0.0001) 50.19%,
-    rgba(255, 255, 255, 0.15) 80.06%
+    rgba(0, 0, 0, 0.14) 8.56%,
+    rgba(0, 0, 0, 0.02) 37.96%,
+    rgba(0, 0, 0, 0.02) 50.19%,
+    rgba(0, 0, 0, 0.1) 80.06%
   );
 }
 
 @utility card-map {
-  --card-bg: var(--color-black, #000);
+  --card-bg: #e8e8ea;
 }
 @utility card-radius-24 {
   --card-radius: 24px;
@@ -129,14 +129,14 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
-  background-color: var(--color-black);
+  background-color: #fff;
 }
 
 body {
   margin: 0;
   height: 100%;
   width: 100%;
-  background-color: var(--color-black);
+  background-color: #fff;
 }
 
 html,
@@ -160,17 +160,18 @@ body {
   background-color: var(--color-black);
 }
 
+/* Shot spans: s*=1×1, w*=2×1, t*=1×2, l*=2×2 (see `EntryShotSize` + `ShotSize` in `src/db/types.ts`). */
 .content-grid {
   grid-template-columns: repeat(8, 290px);
   grid-template-rows: repeat(7, 218px);
   grid-template-areas:
-    "s1 s2 l1 l1 s3 s4 s5 s6"
-    "gallery gallery l1 l1 contact contact s7 s8"
-    "gallery gallery s9 s10 s11 s12 cv s13"
-    "s14 s15 s16 profile profile s17 cv s18"
-    "map map s19 s20 s21 s22 cv s23"
-    "s24 l2 l2 technologies technologies s25 l3 l3"
-    "s26 l2 l2 s27 s28 s29 l3 l3";
+    "gallery gallery t1 painting s1 s2 l1 l1"
+    "gallery gallery t1 painting contact contact l1 l1"
+    "w1 w1 s3 s4 s5 s6 cv s7"
+    "s8 s9 t2 profile profile t3 cv s10"
+    "map map t2 t4 s11 t3 cv s12"
+    "t5 s13 t6 t4 t7 about s14 s15"
+    "t5 s16 t6 s17 t7 about s18 s19";
 }
 
 .card::before {

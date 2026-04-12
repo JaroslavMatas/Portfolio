@@ -9,7 +9,6 @@ import {EntryProfile} from '@/db'
 import {useIntro} from '@/providers'
 
 import {CardProfileControls} from './card-profile-controls'
-import {LinkExternal} from './link-external'
 
 export const CardProfile: FC<EntryProfile> = ({area}) => {
   const avatarRef = useRef<HTMLDivElement>(null)
@@ -74,7 +73,7 @@ export const CardProfile: FC<EntryProfile> = ({area}) => {
       <div className="flex flex-col w-full grow overflow-hidden h-full items-center">
         <div className="flex flex-row items-center gap-4 pt-[61px]">
           <div ref={avatarRef}>
-            <div className="relative flex items-center justify-center rounded-[48px] overflow-hidden w-[64px] h-[64px] shadow-[inset_0_0_0_1px_#ffffff1a]">
+            <div className="relative flex items-center justify-center rounded-[48px] overflow-hidden w-[64px] h-[64px] shadow-[inset_0_0_0_1px_rgba(0,0,0,0.08)]">
               <Image
                 preload
                 src="/png/profile@3x.png"
@@ -87,19 +86,14 @@ export const CardProfile: FC<EntryProfile> = ({area}) => {
           </div>
           <div>
             <div ref={nameRef}>
-              <h1 className="text-[18px] font-medium leading-[24px] tracking-[0px] bg-[linear-gradient(180deg,#ffffff_0%,rgba(255,255,255,0.48)_100%)] bg-clip-text text-transparent drop-shadow-[0_0_2px_rgba(0,0,0,0.25)]">
+              <h1 className="text-[18px] font-medium leading-[24px] tracking-[0px] bg-[linear-gradient(180deg,#171717_0%,rgba(23,23,23,0.55)_100%)] bg-clip-text text-transparent">
                 {Config.fullName}
               </h1>
             </div>
-            <div ref={positionRef} className="flex flex-row gap-[7px]">
-              <h2 className="text-[18px] font-medium leading-[24px] tracking-[0px] text-white/50">
-                {Config.company.position}
+            <div ref={positionRef}>
+              <h2 className="text-[18px] font-medium leading-[24px] tracking-[0px] text-neutral-500">
+                {Config.tagline}
               </h2>
-              <LinkExternal url={Config.company.url}>
-                <h2 className="text-[18px] font-medium leading-[24px] tracking-[0px] bg-[linear-gradient(180deg,#ffffff_0%,rgba(255,255,255,0.48)_100%)] bg-clip-text text-transparent drop-shadow-[0_0_2px_rgba(0,0,0,0.25)]">
-                  {Config.company.name}
-                </h2>
-              </LinkExternal>
             </div>
           </div>
         </div>

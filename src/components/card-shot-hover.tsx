@@ -12,7 +12,7 @@ export const CardShotHover = forwardRef<HTMLDivElement, CardShotVideoProps>(({ti
       ref={ref}
       className="translate-y-[88px] opacity-0 w-full h-[87px] bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,rgba(0,0,0,0.25)_20.37%,#000_100%)] flex items-end px-[16px] pb-[15px] will-change-[transform,opacity] transform-gpu"
     >
-      <span className="block font-medium align-middle text-[13px] leading-[100%] tracking-[0px] text-white">
+      <span className="block font-medium align-middle text-[13px] leading-[100%] tracking-[0px] text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
         {title}
       </span>
     </div>

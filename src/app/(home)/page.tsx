@@ -8,14 +8,16 @@ import {
   CardTechnologies,
   IntroOverlay,
 } from '@/components'
-import {entries} from '@/db'
-import {CameraProvider, IntroProvider} from '@/providers'
+import {CardAbout} from '@/components/card-about'
+import {CardPainting} from '@/components/card-painting'
+import { entries } from '@/db'
+import { CameraProvider, IntroProvider } from '@/providers'
 
 export default async function Home() {
   return (
     <IntroProvider>
       <CameraProvider>
-        {entries.map(entry => {
+        {entries.map(entry => {  
           switch (entry.variant) {
             case 'contact':
               return <CardContact key={entry.area} {...entry} />
@@ -31,6 +33,10 @@ export default async function Home() {
               return <CardShot key={entry.area} {...entry} />
             case 'technologies':
               return <CardTechnologies key={entry.area} {...entry} />
+            case 'about':
+              return <CardAbout key={entry.area} {...entry} />
+            case 'painting':
+              return <CardPainting key={entry.area} {...entry} />
           }
         })}
       </CameraProvider>

@@ -207,7 +207,7 @@ export const Gallery: FC<GalleryProps> = ({isOpen, onClose}) => {
 
   return ReactDOM.createPortal(
     <div className="fixed inset-0 z-40 w-screen h-screen overflow-auto block">
-      <div ref={backdropRef} className="fixed inset-0 bg-black/50 will-change-[opacity]" />
+      <div ref={backdropRef} className="fixed inset-0 bg-neutral-900/25 will-change-[opacity]" />
       <div className="flex w-full min-h-full mx-auto py-10 relative justify-center" onClick={startClose}>
         <div
           ref={cardRef}

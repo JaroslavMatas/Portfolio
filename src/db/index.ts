@@ -35,6 +35,16 @@ import small26 from './entries/shot-small-26'
 import small27 from './entries/shot-small-27'
 import small28 from './entries/shot-small-28'
 import small29 from './entries/shot-small-29'
+import tall1 from './entries/shot-tall-1'
+import tall2 from './entries/shot-tall-2'
+import tall3 from './entries/shot-tall-3'
+import tall4 from './entries/shot-tall-4'
+import tall5 from './entries/shot-tall-5'
+import tall6 from './entries/shot-tall-6'
+import tall7 from './entries/shot-tall-7'
+import wide1 from './entries/shot-wide-1'
+import about from './entries/about'
+import painting from './entries/painting'
 import technologies from './entries/technologies'
 
 import type {Entries} from './types'
@@ -77,7 +87,17 @@ export const entries: Entries = [
   small8,
   small9,
   small29,
+  tall1,
+  tall2,
+  tall3,
+  tall4,
+  tall5,
+  tall6,
+  tall7,
+  wide1,
   technologies,
+  about,
+  painting,
 ]
 
 export * from './cv'

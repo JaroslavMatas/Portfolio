@@ -84,10 +84,10 @@ export const LinkExternal: FC<LinkExternalProps> = ({url, children, variant = 'd
       <div className="absolute w-full bottom-[-1.5px]">
         {isMuted ? (
           <div className="relative h-[1.5px] w-full">
-            <div className="absolute inset-0 bg-white/30" />
+            <div className="absolute inset-0 bg-neutral-900/20" />
             <div
               ref={hoverLineRef}
-              className="absolute inset-0 opacity-0 bg-[linear-gradient(to_right,#ffffff_0%,rgba(255,255,255,0.48)_100%)]"
+              className="absolute inset-0 opacity-0 bg-[linear-gradient(to_right,#171717_0%,rgba(23,23,23,0.45)_100%)]"
             />
           </div>
         ) : (
@@ -95,7 +95,7 @@ export const LinkExternal: FC<LinkExternalProps> = ({url, children, variant = 'd
             ref={lineRef}
             className={cn(
               'h-[1.5px] w-0 will-change-[width,height] transform-gpu',
-              'bg-[linear-gradient(to_right,#ffffff_0%,rgba(255,255,255,0.48)_100%)]'
+              'bg-[linear-gradient(to_right,#171717_0%,rgba(23,23,23,0.45)_100%)]'
             )}
           />
         )}

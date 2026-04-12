@@ -1,10 +1,6 @@
 export const Config = {
-  company: {
-    name: 'Footshop',
-    position: 'Lead Mobile Developer at',
-    url: 'https://footshop.com',
-  },
   fullName: 'Jaroslav Matas',
+  tagline: '3D & Motion Design',
   layout: {
     height: 3318,
     width: 4368,

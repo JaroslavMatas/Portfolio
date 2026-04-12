@@ -113,13 +113,13 @@ export const IntroOverlay = () => {
   }
 
   return ReactDOM.createPortal(
-    <div ref={overlayRef} className="fixed inset-0 z-50 bg-black" style={{pointerEvents: 'none'}}>
+    <div ref={overlayRef} className="fixed inset-0 z-50 bg-white" style={{pointerEvents: 'none'}}>
       <div
         ref={lineRef}
         className="fixed rounded-2xl"
         style={{
           background: 'var(--card-bg)',
-          border: '1px solid rgba(255, 255, 255, 0.15)',
+          border: '1px solid rgba(0, 0, 0, 0.12)',
         }}
       />
     </div>,

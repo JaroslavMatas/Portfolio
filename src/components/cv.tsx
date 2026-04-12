@@ -11,12 +11,12 @@ import {LinkExternal} from './link-external'
 
 const SectionLeft: FC<{year: string}> = ({year}) => (
   <div className="w-[88px] h-[17px] flex-shrink-0">
-    <span className="block font-normal text-[14px] leading-[100%] tracking-[0px] text-white/40">{year}</span>
+    <span className="block font-normal text-[14px] leading-[100%] tracking-[0px] text-neutral-500">{year}</span>
   </div>
 )
 
-const Dot = () => <div className="w-[4px] h-[4px] bg-white/20 rounded-full" />
-const Line = () => <div className="w-[1.5px] h-[18.75px] bg-white/15 rounded-[2px]" />
+const Dot = () => <div className="w-[4px] h-[4px] bg-neutral-900/15 rounded-full" />
+const Line = () => <div className="w-[1.5px] h-[18.75px] bg-neutral-900/10 rounded-[2px]" />
 
 const Segments: FC<Pick<CVSection, 'positions'>> = ({positions}) => {
   if (positions.length - 1 === 0) {
@@ -36,8 +36,8 @@ const Segments: FC<Pick<CVSection, 'positions'>> = ({positions}) => {
 }
 
 const variant: Record<'active' | 'inactive', string> = {
-  active: 'text-white',
-  inactive: 'text-white/60',
+  active: 'text-neutral-900',
+  inactive: 'text-neutral-600',
 }
 
 const PositionLabel: FC<CVPosition & {className?: string}> = ({title, company, url, className}) => {
@@ -92,7 +92,7 @@ const SectionLocation: FC<Pick<CVSection, 'location'>> = props => {
     <div>
       <span
         data-cv-reveal="true"
-        className="block font-normal text-[14px] leading-[100%] tracking-[0px] text-white/60 h-[17px]"
+        className="block font-normal text-[14px] leading-[100%] tracking-[0px] text-neutral-600 h-[17px]"
       >
         {props.location}
       </span>
@@ -110,7 +110,7 @@ const SectionTechnologies: FC<Pick<CVSection, 'technologies'> & {className?: str
       <span
         data-cv-reveal="true"
         className={classNames(
-          'block font-normal text-[14px] leading-[100%] tracking-[0px] text-white/50 h-[17px]',
+          'block font-normal text-[14px] leading-[100%] tracking-[0px] text-neutral-500 h-[17px]',
           props.className
         )}
       >
@@ -121,7 +121,7 @@ const SectionTechnologies: FC<Pick<CVSection, 'technologies'> & {className?: str
 }
 
 const SectionParagraph: FC<{children: ReactNode}> = ({children}) => (
-  <p className="block font-normal text-[14px] leading-[22px] tracking-[0px] text-white/50">{children}</p>
+  <p className="block font-normal text-[14px] leading-[22px] tracking-[0px] text-neutral-500">{children}</p>
 )
 
 const SectionLink: FC<CVSectionLink> = ({name, url}) => (
@@ -129,7 +129,7 @@ const SectionLink: FC<CVSectionLink> = ({name, url}) => (
     <a
       href={url}
       target="_blank"
-      className="block font-normal text-[14px] leading-[22px] tracking-[0px] text-white/50 underline decoration-white/20 decoration-[1.5px] underline-offset-4 hover:decoration-white/40 transition-colors duration-500 ease-out"
+      className="block font-normal text-[14px] leading-[22px] tracking-[0px] text-neutral-500 underline decoration-neutral-900/20 decoration-[1.5px] underline-offset-4 hover:decoration-neutral-900/40 transition-colors duration-500 ease-out"
     >
       {name}
     </a>
@@ -170,7 +170,7 @@ const SectionProject: FC<CVSectionProject> = ({name, position, technologies, par
           href={url}
           target="_blank"
           data-cv-reveal="true"
-          className="block font-normal text-[14px] leading-[22px] tracking-[0px] text-white/80 h-[22px] underline decoration-white/20 decoration-[1.5px] underline-offset-4 hover:decoration-white/40 transition-colors duration-300 ease-in-out"
+          className="block font-normal text-[14px] leading-[22px] tracking-[0px] text-neutral-800 h-[22px] underline decoration-neutral-900/20 decoration-[1.5px] underline-offset-4 hover:decoration-neutral-900/40 transition-colors duration-300 ease-in-out"
         >
           {name}
         </a>
@@ -178,7 +178,7 @@ const SectionProject: FC<CVSectionProject> = ({name, position, technologies, par
       <div>
         <span
           data-cv-reveal="true"
-          className="block font-normal text-[14px] leading-[100%] tracking-[0px] text-white/60 h-[17px]"
+          className="block font-normal text-[14px] leading-[100%] tracking-[0px] text-neutral-600 h-[17px]"
         >
           {position}
         </span>
@@ -207,7 +207,7 @@ const SectionProjects: FC<Pick<CVSection, 'projects'>> = ({projects}) => {
       <div className="py-[24px]">
         <span
           data-cv-reveal="true"
-          className="block font-normal text-[14px] leading-[22px] tracking-[0px] text-white h-[22px]"
+          className="block font-normal text-[14px] leading-[22px] tracking-[0px] text-neutral-900 h-[22px]"
         >
           Projects
         </span>
@@ -253,17 +253,17 @@ const Section = ({year, ...props}: CVSection) => (
 const SectionItem: FC<{name?: string; url?: string; type: string}> = ({name, url, type}) => {
   return (
     <div className="flex items-center">
-      <span className="block font-normal text-[14px] leading-[100%] tracking-[0px] text-white/40 w-[70.37px] mr-[35.98px]">
+      <span className="block font-normal text-[14px] leading-[100%] tracking-[0px] text-neutral-500 w-[70.37px] mr-[35.98px]">
         {type}
       </span>
       {url ? (
         <LinkExternal url={url}>
-          <span className="text-[14px] font-normal tracking-[0px] bg-[linear-gradient(180deg,#ffffff_0%,rgba(255,255,255,0.72)_100%)] bg-clip-text text-transparent drop-shadow-[0_0_2px_rgba(0,0,0,0.25)]">
+          <span className="text-[14px] font-normal tracking-[0px] bg-[linear-gradient(180deg,#171717_0%,rgba(23,23,23,0.65)_100%)] bg-clip-text text-transparent">
             {name}
           </span>
         </LinkExternal>
       ) : (
-        <span className="text-[14px] font-normal tracking-[0px] bg-[linear-gradient(180deg,#ffffff_0%,rgba(255,255,255,0.72)_100%)] bg-clip-text text-transparent drop-shadow-[0_0_2px_rgba(0,0,0,0.25)]">
+        <span className="text-[14px] font-normal tracking-[0px] bg-[linear-gradient(180deg,#171717_0%,rgba(23,23,23,0.65)_100%)] bg-clip-text text-transparent">
           {name}
         </span>
       )}
@@ -283,7 +283,7 @@ const SectionLanguagesAndLocations: FC = () => (
   <div className="flex flex-row gap-[51px] flex-wrap">
     <div className="flex flex-col gap-[56px]">
       <div className="h-[17px]">
-        <h1 className="block font-normal text-[14px] leading-[100%] tracking-[0px] text-white">Languages</h1>
+        <h1 className="block font-normal text-[14px] leading-[100%] tracking-[0px] text-neutral-900">Languages</h1>
       </div>
       <div className="flex flex-col gap-[19.19px]">
         <SectionItem type="Native" name="Czech" />
@@ -293,7 +293,7 @@ const SectionLanguagesAndLocations: FC = () => (
     <div className="flex flex-1" />
     <div className="flex flex-col gap-[56px]">
       <div className="h-[17px]">
-        <h1 className="block font-normal text-[14px] leading-[100%] tracking-[0px] text-white">Locations</h1>
+        <h1 className="block font-normal text-[14px] leading-[100%] tracking-[0px] text-neutral-900">Locations</h1>
       </div>
       <div className="flex flex-col gap-[19.19px]">
         <SectionItem type="Based in" name="Prague, Czechia" />
@@ -381,7 +381,7 @@ export const CV: FC<CVProps> = ({children, animated = false}) => {
     <div className="h-full w-full flex flex-col max-w-[572px]">
       <div ref={ref} className="w-full h-full flex flex-col gap-[44px] md:gap-[56px]">
         <div className="h-[17px]">
-          <h1 className="block font-normal text-[14px] leading-[100%] tracking-[0px] text-white">Work Experience</h1>
+          <h1 className="block font-normal text-[14px] leading-[100%] tracking-[0px] text-neutral-900">Work Experience</h1>
         </div>
 
         <div className="flex flex-col gap-[56px]">
@@ -394,7 +394,7 @@ export const CV: FC<CVProps> = ({children, animated = false}) => {
 
         <div className="flex flex-col gap-[56px]">
           <div className="h-[17px]">
-            <h1 className="block font-normal text-[14px] leading-[100%] tracking-[0px] text-white">Side Projects</h1>
+            <h1 className="block font-normal text-[14px] leading-[100%] tracking-[0px] text-neutral-900">Side Projects</h1>
           </div>
           {sideProjects.map((section, index) => (
             <div key={index.toString()} className="flex flex-col w-full">
@@ -405,7 +405,7 @@ export const CV: FC<CVProps> = ({children, animated = false}) => {
 
         <div className="flex flex-col gap-[56px]">
           <div className="h-[17px]">
-            <h1 className="block font-normal text-[14px] leading-[100%] tracking-[0px] text-white">Education</h1>
+            <h1 className="block font-normal text-[14px] leading-[100%] tracking-[0px] text-neutral-900">Education</h1>
           </div>
           {education.map((section, index) => (
             <div key={index.toString()} className="flex flex-col w-full">
@@ -416,7 +416,7 @@ export const CV: FC<CVProps> = ({children, animated = false}) => {
 
         <div className="flex flex-col gap-[56px]">
           <div className="h-[17px]">
-            <h1 className="block font-normal text-[14px] leading-[100%] tracking-[0px] text-white">Connect</h1>
+            <h1 className="block font-normal text-[14px] leading-[100%] tracking-[0px] text-neutral-900">Connect</h1>
           </div>
           <SectionConnect />
         </div>
@@ -427,7 +427,7 @@ export const CV: FC<CVProps> = ({children, animated = false}) => {
           <LinkExternal url="/pdf/cv.pdf">
             <span
               data-cv-reveal="true"
-              className="text-[14px] font-normal tracking-[0px] bg-[linear-gradient(180deg,#ffffff_0%,rgba(255,255,255,0.72)_100%)] bg-clip-text text-transparent drop-shadow-[0_0_2px_rgba(0,0,0,0.25)]"
+              className="text-[14px] font-normal tracking-[0px] bg-[linear-gradient(180deg,#171717_0%,rgba(23,23,23,0.65)_100%)] bg-clip-text text-transparent"
             >
               Download CV in PDF
             </span>

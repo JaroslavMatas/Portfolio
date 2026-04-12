@@ -1,6 +1,6 @@
-export type EntryVariant = 'shot' | 'contact' | 'map' | 'cv' | 'profile' | 'gallery' | 'technologies'
+export type EntryVariant = 'shot' | 'contact' | 'map' | 'cv' | 'profile' | 'painting' | 'gallery' | 'technologies' | 'about'
 
-export type ShotSize = 's' | 'l'
+export type ShotSize = 's' | 'l' | 't' | 'w'
 export type ShotArea = `${ShotSize}${number}`
 
 export type AnimationConfig = {
@@ -35,7 +35,7 @@ export type EntryShotVideos = {
   webm: string
 }
 
-export type EntryShotSize = 'large' | 'small'
+export type EntryShotSize = 'large' | 'small' | 'tall' | 'wide'
 
 export type EntryShot = {
   title: string
@@ -99,7 +99,21 @@ export type EntryTechnologies = {
   animation?: AnimationConfig
 }
 
-export type Entry = EntryShot | EntryContact | EntryMap | EntryCV | EntryProfile | EntryGallery | EntryTechnologies
+export type EntryAbout = {
+  area: 'about'
+  variant: Extract<EntryVariant, 'about'>
+  slug: string
+  animation?: AnimationConfig
+}
+
+export type EntryPainting = {
+  area: 'painting'
+  variant: Extract<EntryVariant, 'painting'>
+  slug: string
+  animation?: AnimationConfig
+}
+
+export type Entry = EntryShot | EntryContact | EntryMap | EntryCV | EntryProfile | EntryGallery | EntryTechnologies | EntryAbout | EntryPainting
 
 export type Entries = Entry[]
 

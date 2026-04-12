@@ -99,7 +99,7 @@ export const CardCV: FC<EntryCV> = ({area, animation}) => {
             className="absolute bottom-[1px] overflow-hidden flex justify-end items-end rounded-2xl h-full w-full pointer-events-none"
             style={{clipPath: 'inset(1px round 16px)'}}
           >
-            <div className="h-[146px] w-full rounded-br-2xl rounded-bl-2xl bg-gradient-to-b from-black/0 to-black to-[72.83%] flex items-end justify-center">
+            <div className="h-[146px] w-full rounded-br-2xl rounded-bl-2xl bg-gradient-to-b from-transparent to-neutral-900/78 to-[72.83%] flex items-end justify-center">
               <span className="text-[14px] opacity-70 font-normal tracking-[0px] bg-[linear-gradient(180deg,#ffffff_0%,rgba(255,255,255,0.72)_100%)] bg-clip-text text-transparent drop-shadow-[0_0_2px_rgba(0,0,0,0.25)] pb-[32px]">
                 CV
               </span>

@@ -14,7 +14,7 @@ const inter = Inter({
 })
 
 export const viewport: Viewport = {
-  themeColor: '#000000',
+  themeColor: '#ffffff',
   viewportFit: 'cover',
 }
 
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   appleWebApp: {
-    statusBarStyle: 'black-translucent',
+    statusBarStyle: 'default',
   },
   authors: [{name: 'Jaroslav Matas', url: 'https://janblazej.dev'}],
   creator: 'Jaroslav Matas',

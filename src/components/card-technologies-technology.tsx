@@ -21,8 +21,7 @@ const variantClasses: Record<TechnologyVariant, string> = {
     drop-shadow-[0_0_2px_rgba(0,0,0,0.25)]
   `,
   white: `
-    bg-[linear-gradient(180deg,#FFFFFF_0%,rgba(255,255,255,0.72)_100%)]
-    drop-shadow-[0_0_2px_rgba(0,0,0,0.25)]
+    bg-[linear-gradient(180deg,#171717_0%,rgba(23,23,23,0.65)_100%)]
   `,
 }
 

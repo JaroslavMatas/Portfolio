@@ -7,6 +7,7 @@ import {FC, Fragment, PointerEvent, useCallback, useRef, useState} from 'react'
 import {EntryShot} from '@/db'
 import {useEntranceAnimation, useHasHover} from '@/hooks'
 import {trackProjectView} from '@/lib'
+import {shotImageSizesProp} from '@/utils'
 import {actionToggleModal, useCameraDispatch} from '@/providers'
 
 import {CardShotHover} from './card-shot-hover'
@@ -94,7 +95,7 @@ export const CardShot: FC<EntryShot> = ({area, properties, title, description, i
     <Fragment>
       <div
         ref={refCard}
-        className="w-full shrink-0 flex h-full contain-intrinsic overflow-hidden bg-card-surface rounded-2xl border border-solid border-white/15 transform-3d bg-black"
+        className="w-full shrink-0 flex h-full contain-intrinsic overflow-hidden bg-card-surface rounded-2xl border border-solid border-neutral-900/10 transform-3d bg-neutral-100"
         style={{gridArea: area}}
       >
         <div
@@ -112,7 +113,7 @@ export const CardShot: FC<EntryShot> = ({area, properties, title, description, i
               fill
               loading="eager"
               fetchPriority="high"
-              sizes={size === 'small' ? '289px' : '594px'}
+              sizes={shotImageSizesProp(size)}
               style={{objectFit: 'cover'}}
             />
             <CardShotVideo ref={refVideoIcon} videos={videos} image={image} hasHover={hasHover} />

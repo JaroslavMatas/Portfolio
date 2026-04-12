@@ -7,19 +7,19 @@ export const CardProfileControls = () => (
       <CardProfileControlsArrows />
     </div>
     <div className="pr-1.5">
-      <span className="text-[12px] font-normal leading-[100%] tracking-[0px] text-white/50">Scroll</span>
+      <span className="text-[12px] font-normal leading-[100%] tracking-[0px] text-neutral-500">Scroll</span>
     </div>
     <div className="pr-1.5">
-      <span className="text-[12px] font-normal leading-[100%] tracking-[0px] text-white/30">or use</span>
+      <span className="text-[12px] font-normal leading-[100%] tracking-[0px] text-neutral-400">or use</span>
     </div>
     <div className="pr-1">
       <CardProfileControlsKeyboard />
     </div>
     <div className="pr-1.5">
-      <span className="text-[12px] font-normal leading-[100%] tracking-[0px] text-white/50">WSAD keys</span>
+      <span className="text-[12px] font-normal leading-[100%] tracking-[0px] text-neutral-500">WSAD keys</span>
     </div>
     <div className="pr-1.5">
-      <span className="text-[12px] font-normal leading-[100%] tracking-[0px] text-white/30">to explore...</span>
+      <span className="text-[12px] font-normal leading-[100%] tracking-[0px] text-neutral-400">to explore...</span>
     </div>
   </div>
 )
