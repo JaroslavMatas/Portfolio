@@ -1,0 +1,39 @@
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "yarn@1.22.19",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "format": "yarn exec biome format --write",
+    "lint": "yarn exec biome lint --write",
+    "check": "yarn exec biome check --write",
+    "ts:check": "tsc --noEmit",
+    "gen:imports": "node ./scripts/generate-entries-imports.mjs",
+    "db:validate": "tsx ./scripts/validate-db.mjs"
+  },
+  "dependencies": {
+    "@next/third-parties": "^16.1.6",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "classnames": "^2.5.1",
+    "clsx": "^2.1.1",
+    "gsap": "^3.13.0",
+    "next": "16.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.3",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4",
+    "tsx": "^4.21.0",
+    "typescript": "^5"
+  }
+}
