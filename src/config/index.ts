@@ -4,7 +4,7 @@ export const Config = {
     position: 'Lead Mobile Developer at',
     url: 'https://footshop.com',
   },
-  fullName: 'Jan Blazej',
+  fullName: 'Jaroslav Matas',
   layout: {
     height: 3318,
     width: 4368,

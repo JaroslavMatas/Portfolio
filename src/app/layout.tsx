@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   appleWebApp: {
     statusBarStyle: 'black-translucent',
   },
-  authors: [{name: 'Jan Blazej', url: 'https://janblazej.dev'}],
-  creator: 'Jan Blazej',
+  authors: [{name: 'Jaroslav Matas', url: 'https://janblazej.dev'}],
+  creator: 'Jaroslav Matas',
   description:
     'Experienced Lead Mobile Developer specializing in React Native, Expo, and TypeScript. Building high-performance mobile applications for iOS and Android. Based in Prague, Czechia.',
   icons: {
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
   },
   keywords: [
-    'Jan Blazej',
+    'Jaroslav Matas',
     'Lead Mobile Developer',
     'React Native Developer',
     'Expo Developer',
@@ -59,19 +59,19 @@ export const metadata: Metadata = {
       'Experienced Lead Mobile Developer specializing in React Native, Expo, and TypeScript. Building high-performance mobile applications for iOS and Android.',
     images: [
       {
-        alt: 'Jan Blazej - Lead Mobile Developer',
+        alt: 'Jaroslav Matas - Lead Mobile Developer',
         height: 630,
         url: '/png/og-image.png',
         width: 1200,
       },
     ],
     locale: 'en_US',
-    siteName: 'Jan Blazej Portfolio',
-    title: 'Jan Blazej - Lead Mobile Developer & Founder',
+    siteName: 'Jaroslav Matas Portfolio',
+    title: 'Jaroslav Matas - Lead Mobile Developer & Founder',
     type: 'website',
     url: 'https://janblazej.dev',
   },
-  publisher: 'Jan Blazej',
+  publisher: 'Jaroslav Matas',
   robots: {
     follow: true,
     googleBot: {
@@ -84,15 +84,15 @@ export const metadata: Metadata = {
     index: true,
   },
   title: {
-    default: 'Jan Blazej - Lead Mobile Developer & Founder',
-    template: '%s | Jan Blazej',
+    default: 'Jaroslav Matas - Lead Mobile Developer & Founder',
+    template: '%s | Jaroslav Matas',
   },
   twitter: {
     card: 'summary_large_image',
     description:
       'Experienced Lead Mobile Developer specializing in React Native, Expo, and TypeScript. Building high-performance mobile applications.',
     images: ['/png/og-image.png'],
-    title: 'Jan Blazej - Lead Mobile Developer & Founder',
+    title: 'Jaroslav Matas - Lead Mobile Developer & Founder',
   },
 }
 
@@ -123,7 +123,7 @@ export default function RootLayout({children}: Props) {
       'visionOS',
       'RealityKit',
     ],
-    name: 'Jan Blazej',
+    name: 'Jaroslav Matas',
     sameAs: ['https://www.linkedin.com/in/hzblj', 'https://github.com/hzblj', 'https://www.instagram.com/hzblj'],
     url: 'https://janblazej.dev',
     worksFor: {
