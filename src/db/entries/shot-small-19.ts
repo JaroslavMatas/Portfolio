@@ -3,44 +3,40 @@ import type {EntryShot} from '../types'
 const shot: EntryShot = {
   animation: {
     from: {opacity: 0, scale: 0.88, x: 37, y: -15},
-    origin: 'top right',
+    origin: 'top left',
     to: {delay: 0.1, duration: 0.8, ease: 'bezier-out-back', opacity: 1, scale: 1, x: 0, y: 0},
   },
   area: 's19',
   description:
-    'Each story page can be shared as a pre-generated image. The image matches the exact content shown in the app. Sharing uses the native share dialog for a smooth and familiar experience. Fans can easily send match moments to any messaging or social app.',
-  image: '/webp/shot-small-19.webp',
+    'Poster design created for a live event celebrating the first anniversary of the Fantastic Future podcast, hosted by Petr Mára, Jaroslav Beck, and Lubomír Šmid. The visual builds on the project’s identity system, translating its futuristic aesthetic into a static format. The poster was used as the official event visual and also served as a foundation for future promotional materials. I was responsible for the full design and visual direction.',
+  image: '/jpg/shot-small-19.jpg',
   properties: [
     {
-      name: 'Product',
-      value: 'Sportlito',
+      name: 'Client',
+      value: 'Fantastic Future Podcast',
     },
     {
-      name: 'Technology',
-      value: 'Expo, React Native, TypeScript',
+      name: 'Project',
+      value: 'Fantastic Future - Visual Identity',
     },
     {
       name: 'Industry',
-      value: 'Sport / Media / Entertainment',
+      value: 'Tech & Entertainment',
     },
     {
       name: 'Link',
-      url: 'https://www.linkedin.com/company/sportlito',
-      value: 'sportlito.com',
+      url: 'https://www.youtube.com/playlist?list=PLntoqYQ2pPwe6z8oQjglv7ESpfayYAF58',
+      value: 'Fantastic Future Youtube',
     },
     {
       name: 'Year',
-      value: '2020',
+      value: '2025',
     },
   ],
   size: 'small',
-  slug: 'sportlito-story-sharing',
-  title: 'Sportlito - Story Sharing',
+  slug: 'fantastic-future-live-event-poster-design',
+  title: 'Fantastic Future Live Event Poster Design',
   variant: 'shot',
-  videos: {
-    mp4: '/mp4/shot-small-19.mp4',
-    webm: '/webm/shot-small-19.webm',
-  },
 }
 
 export default shot

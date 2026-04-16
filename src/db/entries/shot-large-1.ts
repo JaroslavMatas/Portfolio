@@ -2,41 +2,45 @@ import type {EntryShot} from '../types'
 
 const shot: EntryShot = {
   animation: {
-    from: {opacity: 0, scale: 0.88, x: 1, y: 41.5},
-    origin: 'bottom right',
+    from: {opacity: 0, scale: 0.88, x: -37, y: 0},
+    origin: 'bottom left',
     to: {delay: 0.15, duration: 1, ease: 'bezier-out-back', opacity: 1, scale: 1, x: 0, y: 0},
   },
   area: 'l1',
   description:
-    'Joined Footshop to lead the development of a new mobile app for iOS and Android. The work started as a small MVP focused on core e-commerce flows. Over time, it evolved into a strategic product used as a main mobile channel. The goal was to move fast, validate ideas early, and still keep the codebase ready for long-term growth. Expo and React Native were chosen to ship quickly on both platforms while keeping performance and developer velocity high.',
-  image: '/jpg/shot-large-1.jpg',
+    'In collaboration with Black Box Infinite, we’ve developed a highly detailed version of the Las Vegas Circuit. By rotating or zooming in on the map, you can explore remarkable landmarks in stunning detail, including the Fountains of Bellagio, the interior seating of The Sphere, and many other iconic features that make Las Vegas unique. For an extra touch of realism, even a helicopter flies overhead every five minutes.',
+  image: '/webp/shot-large-1.webp',
   properties: [
     {
       name: 'Product',
-      value: 'Footshop',
+      value: 'Lapz - Watch F1 in visionOS',
     },
     {
       name: 'Technology',
-      value: 'Expo, React Native, TypeScript',
+      value: 'Swift, visionOS, RealityKit',
     },
     {
       name: 'Industry',
-      value: 'E-commerce / Fashion / Sneakers',
+      value: 'AR / Motorsports',
     },
     {
       name: 'Link',
-      url: 'https://footshop.com',
-      value: 'footshop.com',
+      url: 'https://lapz.io',
+      value: 'lapz.io',
     },
     {
       name: 'Year',
-      value: '2023',
+      value: '2024',
     },
   ],
   size: 'large',
-  slug: 'footshop-mobile-app',
-  title: 'Footshop - Mobile App',
+  slug: 'lapz-watch-f1-in-visionos-map',
+  title: 'Lapz - Map',
   variant: 'shot',
+  videos: {
+    mp4: '/webm/shot-large-1.mp4',
+    webm: '/webm/shot-large-1.webm',
+  },
 }
 
 export default shot

@@ -3,42 +3,42 @@ import type {EntryShot} from '../types'
 const shot: EntryShot = {
   animation: {
     from: {opacity: 0, scale: 0.88, x: -37, y: 0},
-    origin: 'center left',
+    origin: 'top left',
     to: {delay: 0.15, duration: 1, ease: 'bezier-out-back', opacity: 1, scale: 1, x: 0, y: 0},
   },
   area: 's18',
   description:
-    'In collaboration with Black Box Infinite, we’ve developed a highly detailed version of the Las Vegas Circuit. By rotating or zooming in on the map, you can explore remarkable landmarks in stunning detail, including the Fountains of Bellagio, the interior seating of The Sphere, and many other iconic features that make Las Vegas unique. For an extra touch of realism, even a helicopter flies overhead every five minutes.',
-  image: '/webp/shot-small-18.webp',
+    'Animated UI elements created for use within Fantastic Future podcast episodes, prompting viewer interaction directly in the video. The visuals appear as subtle pop-up overlays, blending with the footage while maintaining a clear call to action. The design builds on a liquid glass-like motion language inspired by Apple, adapted into a cohesive system across the content. I developed the visual style and handled the animation.',
+  image: '/jpg/shot-small-18.jpg',
   properties: [
     {
-      name: 'Product',
-      value: 'Lapz - Watch F1 in visionOS',
+      name: 'Client',
+      value: 'Fantastic Future Podcast',
     },
     {
-      name: 'Technology',
-      value: 'Swift, visionOS, RealityKit',
+      name: 'Project',
+      value: 'Fantastic Future - Visual Identity',
     },
     {
       name: 'Industry',
-      value: 'AR / Motorsports',
+      value: 'Tech & Entertainment',
     },
     {
       name: 'Link',
-      url: 'https://lapz.io',
-      value: 'lapz.io',
+      url: 'https://www.youtube.com/playlist?list=PLntoqYQ2pPwe6z8oQjglv7ESpfayYAF58',
+      value: 'Fantastic Future Youtube',
     },
     {
       name: 'Year',
-      value: '2024',
+      value: '2025',
     },
   ],
   size: 'small',
-  slug: 'lapz-watch-f1-in-visionos-map',
-  title: 'Lapz - Map',
+  slug: 'fantastic-future-like-comment',
+  title: 'Fantastic Future - Like & Comment UI',
   variant: 'shot',
   videos: {
-    mp4: '/webm/shot-small-18.mp4',
+    mp4: '/mp4/shot-small-18.mp4',
     webm: '/webm/shot-small-18.webm',
   },
 }

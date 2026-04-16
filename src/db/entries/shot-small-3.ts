@@ -3,40 +3,44 @@ import type {EntryShot} from '../types'
 const shot: EntryShot = {
   animation: {
     from: {opacity: 0, scale: 0.88, x: -1, y: 70},
-    origin: 'bottom left',
+    origin: 'bottom right',
     to: {delay: 0.2, duration: 1.2, ease: 'bezier-out-back', opacity: 1, scale: 1, x: 0, y: 0},
   },
   area: 's3',
   description:
-    'Product listing and PDP screens were designed for the Footshop mobile app with a strong focus on performance. FlashList was used to handle long product lists smoothly on both iOS and Android. Layouts adapt dynamically to different product types, campaigns, and screen sizes. Product cards were built as flexible components that can change structure without breaking scroll performance. The result is fast browsing and a consistent shopping experience even with large catalogs.',
+    'Teaser created to launch Planeta Liga, a project developed for the Czech top football competition Chance Liga to engage a younger audience. The video introduces a stylized universe of the league through a cast of original 3D characters, each representing different traits and energy. I contributed extensive 3D work across the piece, including character development, rigging, animation, and environment creation, as well as preparing assets for a wide range of outputs. My focus was on building a cohesive visual world that could scale across formats.',
   image: '/jpg/shot-small-3.jpg',
   properties: [
     {
-      name: 'Product',
-      value: 'Footshop',
+      name: 'Client',
+      value: 'Chance League',
     },
     {
-      name: 'Technology',
-      value: 'Expo, React Native, TypeScript',
+      name: 'Project',
+      value: 'Planeta Liga',
     },
     {
       name: 'Industry',
-      value: 'E-commerce / Fashion / Sneakers',
+      value: 'Sports & Entertainment',
     },
     {
       name: 'Link',
-      url: 'https://footshop.com',
-      value: 'footshop.com',
+      url: 'https://planetaliga.cz/',
+      value: 'planetaliga.cz',
     },
     {
       name: 'Year',
-      value: '2023',
+      value: '2026',
     },
   ],
   size: 'small',
-  slug: 'footshop-product-listing-details',
-  title: 'Footshop - Product Listing & Details',
+  slug: 'planeta-liga-teaser',
+  title: 'Planeta Liga Teaser',
   variant: 'shot',
+  videos: {
+    mp4: '/webm/shot-small-3.mp4',
+    webm: '/webm/shot-small-3.webm',
+  },
 }
 
 export default shot

@@ -8,16 +8,16 @@ const shot: EntryShot = {
   },
   area: 's6',
   description:
-    'Player settings went through many iterations because it had to control several parts of the experience in one place. It handles opening and closing driver cams, stream options like audio and channel selection, and 3D map settings for cars, DRS zones, and corner numbers. A ornament and sheet with nested navigation was chosen to group related options and keep the main player clean.',
+    'A refined touch on the Lapz website is the way Vision Pro elegantly follows the passing cars, enhancing the overall feel of the experience with smooth motion.',
   image: '/jpg/shot-small-6.jpg',
   properties: [
     {
       name: 'Product',
-      value: 'Lapz - Watch F1 in visionOS',
+      value: 'Lapz - Watch F1 in visionoS',
     },
     {
-      name: 'Technology',
-      value: 'Swift, visionOS, RealityKit',
+      name: 'Project',
+      value: 'Lapz - Website',
     },
     {
       name: 'Industry',
@@ -25,7 +25,7 @@ const shot: EntryShot = {
     },
     {
       name: 'Link',
-      url: 'https://lapz.io',
+      url: 'https://www.lapz.io/',
       value: 'lapz.io',
     },
     {
@@ -34,9 +34,13 @@ const shot: EntryShot = {
     },
   ],
   size: 'small',
-  slug: 'lapz-watch-f1-in-visionos-player-settings',
-  title: 'Lapz - Player Settings',
+  slug: 'lapz-vision-pro-section',
+  title: 'Lapz - Vision Pro Section',
   variant: 'shot',
+  videos: {
+    mp4: '/webm/shot-small-6.mp4',
+    webm: '/webm/shot-small-6.webm',
+  },
 }
 
 export default shot

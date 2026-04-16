@@ -59,7 +59,7 @@ export const metadata: Metadata = {
       'Experienced Lead Mobile Developer specializing in React Native, Expo, and TypeScript. Building high-performance mobile applications for iOS and Android.',
     images: [
       {
-        alt: 'Jaroslav Matas - Lead Mobile Developer',
+        alt: 'Jaroslav Matas - 3D & Motion Design',
         height: 630,
         url: '/png/og-image.png',
         width: 1200,
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     ],
     locale: 'en_US',
     siteName: 'Jaroslav Matas Portfolio',
-    title: 'Jaroslav Matas - Lead Mobile Developer & Founder',
+    title: 'Jaroslav Matas - 3D & Motion Design',
     type: 'website',
     url: 'https://janblazej.dev',
   },

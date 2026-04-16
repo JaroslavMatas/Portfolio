@@ -2,22 +2,22 @@ import type {EntryShot} from '../types'
 
 const shot: EntryShot = {
   animation: {
-    from: {opacity: 0, scale: 0.88, x: -73, y: 41.5},
+    from: {opacity: 0, scale: 0.88, x: -37, y: 14.5},
     origin: 'bottom left',
     to: {delay: 0.15, duration: 1, ease: 'bezier-out-back', opacity: 1, scale: 1, x: 0, y: 0},
   },
   area: 's7',
   description:
-    'Several core screens are built purely with SwiftUI to present data in a clear and responsive way. Upcoming Races and Last Races lists adapt to different window sizes. Race results are shown using custom tables, while the product detail screen shows circuit statistics and highlights a 3D track map with available stream options. Native SwiftUI was chosen to stay close to the system and keep performance predictable on visionOS.',
+    'In F1, weather can decide the whole race. Teams watch radar data all the time to plan strategy and tire choices. We recreated this idea at home by building a large 3D entity placed above the user. The entity displays an animated heatmap texture that visualizes live weather data.',
   image: '/jpg/shot-small-7.jpg',
   properties: [
     {
       name: 'Product',
-      value: 'Lapz - Watch F1 in visionOS',
+      value: 'Lapz - Watch F1 in visionoS',
     },
     {
-      name: 'Technology',
-      value: 'Swift, visionOS, RealityKit',
+      name: 'Project',
+      value: 'Lapz - Website',
     },
     {
       name: 'Industry',
@@ -25,7 +25,7 @@ const shot: EntryShot = {
     },
     {
       name: 'Link',
-      url: 'https://lapz.io',
+      url: 'https://www.lapz.io/',
       value: 'lapz.io',
     },
     {
@@ -34,9 +34,13 @@ const shot: EntryShot = {
     },
   ],
   size: 'small',
-  slug: 'lapz-watch-f1-in-visionos-visionos-ui',
-  title: 'Lapz - visionOS UI',
+  slug: 'lapz-weather-radar',
+  title: 'Lapz - Weather Radar',
   variant: 'shot',
+  videos: {
+    mp4: '/webm/shot-small-7.mp4',
+    webm: '/webm/shot-small-7.webm',
+  },
 }
 
 export default shot

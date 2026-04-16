@@ -3,40 +3,44 @@ import type {EntryShot} from '../types'
 const shot: EntryShot = {
   animation: {
     from: {opacity: 0, scale: 0.88, x: 109, y: 70},
-    origin: 'bottom right',
+    origin: 'bottom left',
     to: {delay: 0.2, duration: 1.2, ease: 'bezier-out-back', opacity: 1, scale: 1, x: 0, y: 0},
   },
   area: 's2',
   description:
-    'Native payments were added to the Footshop mobile app using Adyen as the payment provider. The goal was to make checkout faster and reduce friction on mobile. Apple Pay and Google Pay were integrated to support platform-native payment flows',
+    'A thoughtfully designed donate page fosters trust and confidence, increasing the likelihood that donors will complete their contributions and have a positive experience. With this in mind,extra attention was given to making the Lapz Donate Page feel polished, inviting, and impactful.',
   image: '/jpg/shot-small-2.jpg',
   properties: [
     {
       name: 'Product',
-      value: 'Footshop',
+      value: 'Lapz - Watch F1 in visionoS',
     },
     {
-      name: 'Technology',
-      value: 'Expo, React Native, TypeScript',
+      name: 'Project',
+      value: 'Lapz - Website',
     },
     {
       name: 'Industry',
-      value: 'E-commerce / Fashion / Sneakers',
+      value: 'AR / Motorsports',
     },
     {
       name: 'Link',
-      url: 'https://footshop.com',
-      value: 'footshop.com',
+      url: 'https://www.lapz.io/',
+      value: 'lapz.io',
     },
     {
       name: 'Year',
-      value: '2023',
+      value: '2024',
     },
   ],
   size: 'small',
-  slug: 'footshop-native-payments',
-  title: 'Footshop - Native Payments',
+  slug: 'lapz-donate-page',
+  title: 'Lapz - Donate Page',
   variant: 'shot',
+  videos: {
+    mp4: '/webm/shot-small-2.mp4',
+    webm: '/webm/shot-small-2.webm',
+  },
 }
 
 export default shot

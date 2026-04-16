@@ -8,35 +8,39 @@ const shot: EntryShot = {
   },
   area: 't7',
   description:
-    'I built the feedback builder where users create a feedback form from reusable question blocks. On the left side, questions can be added, reordered with drag and drop, duplicated, or removed. The right side shows a live preview that updates instantly as the form changes. There is also a preview mode to run the feedback flow as a real user would see it.',
-  image: '/jpg/shot-small-29.jpg',
+    'Visual piece introducing the collaboration between 9Viper and jewelry designer Ondřej Stára. The video presents three custom rings, modeled one-to-one based on the physical designs. The central concept places the ring as a keychain attached to a Dodge Viper key, subtly referencing the brand’s identity and motorsport influence. I handled precise modeling, animation, and overall concept development.',
+  image: '/jpg/shot-tall-7.jpg',
   properties: [
     {
-      name: 'Product',
-      value: 'Meetback',
+      name: 'Client',
+      value: '9Viper x Ondrej Stara',
     },
     {
-      name: 'Technology',
-      value: 'React, TypeScript',
+      name: 'Project',
+      value: '9Viper x Ondřej Stára Collaboration',
     },
     {
       name: 'Industry',
-      value: 'Business Analytics / Productivity',
+      value: 'Fashion',
     },
     {
       name: 'Link',
-      url: 'https://meetback.webflow.io',
-      value: 'meetback.io',
+      url: 'https://ondrejstara.com/',
+      value: 'ondrejstara.com',
     },
     {
       name: 'Year',
-      value: '2021',
+      value: '2025',
     },
   ],
   size: 'tall',
-  slug: 'meetback-feedback-builder',
-  title: 'Meetback - Feedback Builder',
+  slug: '9viper-x-ondrej-stara-drs-active-ring',
+  title: '9Viper x Ondrej Stara DRS Active Ring',
   variant: 'shot',
+  videos: {
+    mp4: '/webm/shot-tall-7.mp4',
+    webm: '/webm/shot-tall-7.webm',
+  },
 }
 
 export default shot

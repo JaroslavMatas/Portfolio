@@ -3,40 +3,44 @@ import type {EntryShot} from '../types'
 const shot: EntryShot = {
   animation: {
     from: {opacity: 0, scale: 0.88, x: 109, y: 70},
-    origin: 'bottom right',
+    origin: 'bottom left',
     to: {delay: 0.2, duration: 1.2, ease: 'bezier-out-back', opacity: 1, scale: 1, x: 0, y: 0},
   },
   area: 's1',
   description:
-    'A trending section was added to the Footshop mobile app to show the top 10 products by category. Users can see what is trending in Shoes, Apparel, and Accessories for specific cities like Prague, Berlin, or Paris. The main idea was to help users find inspiration and discover popular styles in different locations.',
+    'A looping animation showcasing the car’s transformation from sketch to wireframe to full render, featured in the call-to-action section.',
   image: '/jpg/shot-small-1.jpg',
   properties: [
     {
       name: 'Product',
-      value: 'Footshop',
+      value: 'Lapz - Watch F1 in visionoS',
     },
     {
-      name: 'Technology',
-      value: 'Expo, React Native, TypeScript',
+      name: 'Project',
+      value: 'Lapz - Website',
     },
     {
       name: 'Industry',
-      value: 'E-commerce / Fashion / Sneakers',
+      value: 'AR / Motorsports',
     },
     {
       name: 'Link',
-      url: 'https://footshop.com',
-      value: 'footshop.com',
+      url: 'https://www.lapz.io/',
+      value: 'lapz.io',
     },
     {
       name: 'Year',
-      value: '2025',
+      value: '2024',
     },
   ],
   size: 'small',
-  slug: 'footshop-trending',
-  title: 'Footshop - Trending',
+  slug: 'lapz-cta-section',
+  title: 'Lapz - CTA Section',
   variant: 'shot',
+  videos: {
+    mp4: '/webm/shot-small-1.mp4',
+    webm: '/webm/shot-small-1.webm',
+  },
 }
 
 export default shot

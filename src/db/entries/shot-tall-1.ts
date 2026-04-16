@@ -8,35 +8,30 @@ const shot: EntryShot = {
   },
   area: 't1',
   description:
-    'I built the feedback builder where users create a feedback form from reusable question blocks. On the left side, questions can be added, reordered with drag and drop, duplicated, or removed. The right side shows a live preview that updates instantly as the form changes. There is also a preview mode to run the feedback flow as a real user would see it.',
-  image: '/jpg/shot-small-29.jpg',
+    'Personal exploration inspired by the idea of a dream car suspended in an unreal, atmospheric space. The animation features a Mercedes-Benz floating among clouds, wrapped in translucent plastic tightened by thin straps. The focus of the piece was on achieving a believable simulation of the plastic material while maintaining a soft, dreamlike mood. I developed the concept and handled the full process from simulation to final render.',
+  image: '/jpg/shot-tall-1.jpg',
   properties: [
     {
-      name: 'Product',
-      value: 'Meetback',
-    },
-    {
-      name: 'Technology',
-      value: 'React, TypeScript',
+      name: 'Client',
+      value: 'Personal',
     },
     {
       name: 'Industry',
-      value: 'Business Analytics / Productivity',
-    },
-    {
-      name: 'Link',
-      url: 'https://meetback.webflow.io',
-      value: 'meetback.io',
+      value: 'Art / Experimental',
     },
     {
       name: 'Year',
-      value: '2021',
+      value: '2024',
     },
   ],
   size: 'tall',
-  slug: 'meetback-feedback-builder',
-  title: 'Meetback - Feedback Builder',
+  slug: 'mercedes-benz-physics-exploration',
+  title: 'Mercedes-Benz Physics Exploration',
   variant: 'shot',
+  videos: {
+    mp4: '/webm/shot-tall-1.mp4',
+    webm: '/webm/shot-tall-1.webm',
+  },
 }
 
 export default shot

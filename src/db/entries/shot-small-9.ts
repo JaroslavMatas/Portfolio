@@ -3,40 +3,44 @@ import type {EntryShot} from '../types'
 const shot: EntryShot = {
   animation: {
     from: {opacity: 0, scale: 0.88, x: 37, y: 14.5},
-    origin: 'bottom right',
+    origin: 'center right',
     to: {delay: 0.1, duration: 0.8, ease: 'bezier-out-back', opacity: 1, scale: 1, x: 0, y: 0},
   },
   area: 's9',
   description:
-    'An onboarding flow was created for the Footshop mobile app to guide users through their first launch. Content loads with staggered animations to keep the experience smooth and engaging. Video is used to set the brand tone early. The flow collects basic user preferences like gender, notification consent, and account sign-in.',
+    'Character study of KAP from the Planeta Liga universe for Chance Liga. As part of a set of five original characters, I was responsible for modeling, rigging, and preparing assets for various outputs. This shot highlights both the technical structure and final execution.',
   image: '/jpg/shot-small-9.jpg',
   properties: [
     {
-      name: 'Product',
-      value: 'Footshop',
+      name: 'Client',
+      value: 'Chance League',
     },
     {
-      name: 'Technology',
-      value: 'Expo, React Native, TypeScript',
+      name: 'Project',
+      value: 'Planeta Liga',
     },
     {
       name: 'Industry',
-      value: 'E-commerce / Fashion / Sneakers',
+      value: 'Sports & Entertainment',
     },
     {
       name: 'Link',
-      url: 'https://footshop.com',
-      value: 'footshop.com',
+      url: 'https://planetaliga.cz/',
+      value: 'planetaliga.cz',
     },
     {
       name: 'Year',
-      value: '2023',
+      value: '2026',
     },
   ],
   size: 'small',
-  slug: 'footshop-onboarding',
-  title: 'Footshop - Onboarding',
+  slug: 'planeta-liga-kap',
+  title: 'Planeta Liga - KAP',
   variant: 'shot',
+  videos: {
+    mp4: '/webm/shot-small-9.mp4',
+    webm: '/webm/shot-small-9.webm',
+  },
 }
 
 export default shot

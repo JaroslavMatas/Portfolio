@@ -8,34 +8,34 @@ const shot: EntryShot = {
   },
   area: 'w1',
   description:
-    'I built the feedback builder where users create a feedback form from reusable question blocks. On the left side, questions can be added, reordered with drag and drop, duplicated, or removed. The right side shows a live preview that updates instantly as the form changes. There is also a preview mode to run the feedback flow as a real user would see it.',
-  image: '/jpg/shot-small-29.jpg',
+    'The Planeta Liga project, developed for the Czech top football competition Chance Liga to connect with a younger audience. The visual system is built around a stylized universe with five original 3D characters, each defined by distinct traits and motion language. I contributed to character development, rigging, environment creation, and large-scale asset production for a wide range of use cases. The focus was on building a flexible visual world that could adapt across formats while maintaining a consistent identity.',
+  image: '/jpg/shot-wide-1.jpg',
   properties: [
     {
-      name: 'Product',
-      value: 'Meetback',
+      name: 'Client',
+      value: 'Chance League',
     },
     {
-      name: 'Technology',
-      value: 'React, TypeScript',
+      name: 'Project',
+      value: 'Planeta Liga',
     },
     {
       name: 'Industry',
-      value: 'Business Analytics / Productivity',
+      value: 'Sports & Entertainment',
     },
     {
       name: 'Link',
-      url: 'https://meetback.webflow.io',
-      value: 'meetback.io',
+      url: 'https://planetaliga.cz/',
+      value: 'planetaliga.cz',
     },
     {
       name: 'Year',
-      value: '2021',
+      value: '2026',
     },
   ],
   size: 'wide',
-  slug: 'meetback-feedback-builder',
-  title: 'Meetback - Feedback Builder',
+  slug: 'planeta-liga-3d-visuals-development',
+  title: 'Planeta Liga 3D Visuals Development',
   variant: 'shot',
 }
 

@@ -3,40 +3,44 @@ import type {EntryShot} from '../types'
 const shot: EntryShot = {
   animation: {
     from: {opacity: 0, scale: 0.88, x: -37, y: 14.5},
-    origin: 'bottom left',
+    origin: 'center right',
     to: {delay: 0.15, duration: 1, ease: 'bezier-out-back', opacity: 1, scale: 1, x: 0, y: 0},
   },
   area: 's8',
   description:
-    'Team radio is played directly from the driver’s headset in a dedicated window. A simple audio player shows a live waveform. Speech is transcribed using Speech framework and rendered as subtitles, with individual segments highlighted in sync with playback.',
+    'Character animation focused on OFF, one of five original characters developed for the Planeta Liga universe for Chance Liga. Each character was designed with distinct traits and movement language to represent different aspects of the league. I was responsible for developing the full character set, including modeling and rigging, and creating animations used across multiple outputs. This shot highlights the motion and personality of one character within the broader system.',
   image: '/jpg/shot-small-8.jpg',
   properties: [
     {
-      name: 'Product',
-      value: 'Lapz - Watch F1 in visionOS',
+      name: 'Client',
+      value: 'Chance League',
     },
     {
-      name: 'Technology',
-      value: 'Swift, visionOS, RealityKit',
+      name: 'Project',
+      value: 'Planeta Liga',
     },
     {
       name: 'Industry',
-      value: 'AR / Motorsports',
+      value: 'Sports & Entertainment',
     },
     {
       name: 'Link',
-      url: 'https://lapz.io',
-      value: 'lapz.io',
+      url: 'https://planetaliga.cz/',
+      value: 'planetaliga.cz',
     },
     {
       name: 'Year',
-      value: '2024',
+      value: '2026',
     },
   ],
   size: 'small',
-  slug: 'lapz-watch-f1-in-visionos-team-radio',
-  title: 'Lapz - Team Radio',
+  slug: 'planeta-liga-character-off',
+  title: 'Planeta Liga Character - OFF',
   variant: 'shot',
+  videos: {
+    mp4: '/webm/shot-small-8.mp4',
+    webm: '/webm/shot-small-8.webm',
+  },
 }
 
 export default shot

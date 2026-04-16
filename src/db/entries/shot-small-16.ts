@@ -8,35 +8,39 @@ const shot: EntryShot = {
   },
   area: 's16',
   description:
-    'The app was built specifically for Zebra devices with a built-in barcode scanner used at pickup points. It handles complex parcel drop-off and courier pickup flows that must work in real store conditions. An offline-first approach was required, because these devices are often used without stable internet. The design focuses on fast scanning, clear flow steps, and reliable daily use on dedicated hardware.',
+    'Real-world capture of the Prager’s kombucha animation running on UGO in-store touchscreens. The video shows how the visual integrates into the ordering experience and functions as an interactive entry point. This shot highlights the final deployment and user-facing context of the project.',
   image: '/jpg/shot-small-16.jpg',
   properties: [
     {
-      name: 'Product',
-      value: 'DPD - My Pickup',
+      name: 'Client',
+      value: 'Prager’s x UGO',
     },
     {
-      name: 'Technology',
-      value: 'Expo, React Native, TypeScript',
+      name: 'Project',
+      value: 'Prager’s x UGO Touchscreen Animation',
     },
     {
       name: 'Industry',
-      value: 'Logistics / Last-Mile Delivery',
+      value: 'Food & Beverage',
     },
     {
       name: 'Link',
-      url: 'https://qest.cz',
-      value: 'qest.cz',
+      url: 'https://www.ugo.cz/',
+      value: 'ugo.cz',
     },
     {
       name: 'Year',
-      value: '2022',
+      value: '2026',
     },
   ],
   size: 'small',
-  slug: 'dpd-zebra-device',
-  title: 'DPD - Zebra Device',
+  slug: 'pragers-kombucha-touchscreen-in-store',
+  title: 'Prager’s Kombucha Touchscreen in Store',
   variant: 'shot',
+  videos: {
+    mp4: '/webm/shot-small-16.mp4',
+    webm: '/webm/shot-small-16.webm',
+  },
 }
 
 export default shot

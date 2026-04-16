@@ -8,35 +8,39 @@ const shot: EntryShot = {
   },
   area: 't5',
   description:
-    'I built the feedback builder where users create a feedback form from reusable question blocks. On the left side, questions can be added, reordered with drag and drop, duplicated, or removed. The right side shows a live preview that updates instantly as the form changes. There is also a preview mode to run the feedback flow as a real user would see it.',
-  image: '/jpg/shot-small-29.jpg',
+    'Interactive animation created for in-store touchscreens at UGO, where it serves as the entry point to the ordering flow. The scene builds atmosphere around a yellow fridge opening, with cold mist filling the space before revealing all five kombucha flavors on the shelves. The focus was on creating an inviting, sensory moment that draws attention and encourages interaction. I handled the entire process from initial storyboard to final output.',
+  image: '/jpg/shot-tall-5.jpg',
   properties: [
     {
-      name: 'Product',
-      value: 'Meetback',
+      name: 'Client',
+      value: 'Prager’s x UGO',
     },
     {
-      name: 'Technology',
-      value: 'React, TypeScript',
+      name: 'Project',
+      value: 'Prager’s x UGO Touchscreen Animation',
     },
     {
       name: 'Industry',
-      value: 'Business Analytics / Productivity',
+      value: 'Food & Beverage',
     },
     {
       name: 'Link',
-      url: 'https://meetback.webflow.io',
-      value: 'meetback.io',
+      url: 'https://www.pragers.cz/en',
+      value: 'pragers.cz',
     },
     {
       name: 'Year',
-      value: '2021',
+      value: '2026',
     },
   ],
   size: 'tall',
-  slug: 'meetback-feedback-builder',
-  title: 'Meetback - Feedback Builder',
+  slug: 'pragers-kombucha-fridge-animation-for-ugo-stores',
+  title: 'Prager’s Kombucha Fridge Animation for UGO stores',
   variant: 'shot',
+  videos: {
+    mp4: '/webm/shot-tall-5.mp4',
+    webm: '/webm/shot-tall-5.webm',
+  },
 }
 
 export default shot

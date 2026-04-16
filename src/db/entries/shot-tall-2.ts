@@ -8,35 +8,39 @@ const shot: EntryShot = {
   },
   area: 't2',
   description:
-    'I built the feedback builder where users create a feedback form from reusable question blocks. On the left side, questions can be added, reordered with drag and drop, duplicated, or removed. The right side shows a live preview that updates instantly as the form changes. There is also a preview mode to run the feedback flow as a real user would see it.',
-  image: '/jpg/shot-small-29.jpg',
+    'Motion piece created as part of a teaser campaign for Paola Paola. The animation captures a light, Mediterranean summer atmosphere through a towel moving naturally in the wind. I focused on subtle cloth simulation, lighting, and timing to create a calm, sensory-driven visual.',
+  image: '/jpg/shot-tall-2.jpg',
   properties: [
     {
-      name: 'Product',
-      value: 'Meetback',
+      name: 'Client',
+      value: 'Paola Paola',
     },
     {
-      name: 'Technology',
-      value: 'React, TypeScript',
+      name: 'Project',
+      value: 'Paola Paola Launch Teasers',
     },
     {
       name: 'Industry',
-      value: 'Business Analytics / Productivity',
+      value: 'Food & Beverage',
     },
     {
       name: 'Link',
-      url: 'https://meetback.webflow.io',
-      value: 'meetback.io',
+      url: 'https://heypaola.com/',
+      value: 'heypaola.com',
     },
     {
       name: 'Year',
-      value: '2021',
+      value: '2025',
     },
   ],
   size: 'tall',
-  slug: 'meetback-feedback-builder',
-  title: 'Meetback - Feedback Builder',
+  slug: 'paola-paola-towel-motion-teaser',
+  title: 'Paola Paola Towel Motion Teaser',
   variant: 'shot',
+  videos: {
+    mp4: '/webm/shot-tall-2.mp4',
+    webm: '/webm/shot-tall-2.webm',
+  },
 }
 
 export default shot

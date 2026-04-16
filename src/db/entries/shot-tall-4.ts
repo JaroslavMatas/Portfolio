@@ -8,35 +8,39 @@ const shot: EntryShot = {
   },
   area: 't4',
   description:
-    'I built the feedback builder where users create a feedback form from reusable question blocks. On the left side, questions can be added, reordered with drag and drop, duplicated, or removed. The right side shows a live preview that updates instantly as the form changes. There is also a preview mode to run the feedback flow as a real user would see it.',
-  image: '/jpg/shot-small-29.jpg',
+    '3D animation developed as a teaser visual for Paola Paola, centered around a floating pool ring. The scene builds on a clean, minimal composition while evoking a relaxed summer mood through water movement and reflections. I focused on achieving a soft, realistic feel and handled the full production from scene setup to final output.',
+  image: '/jpg/shot-tall-4.jpg',
   properties: [
     {
-      name: 'Product',
-      value: 'Meetback',
+      name: 'Client',
+      value: 'Paola Paola',
     },
     {
-      name: 'Technology',
-      value: 'React, TypeScript',
+      name: 'Project',
+      value: 'Paola Paola Launch Teasers',
     },
     {
       name: 'Industry',
-      value: 'Business Analytics / Productivity',
+      value: 'Food & Beverage',
     },
     {
       name: 'Link',
-      url: 'https://meetback.webflow.io',
-      value: 'meetback.io',
+      url: 'https://heypaola.com/',
+      value: 'heypaola.com',
     },
     {
       name: 'Year',
-      value: '2021',
+      value: '2025',
     },
   ],
   size: 'tall',
-  slug: 'meetback-feedback-builder',
-  title: 'Meetback - Feedback Builder',
+  slug: 'paola-paola-floating-ring-teaser',
+  title: 'Paola Paola Floating Ring Teaser',
   variant: 'shot',
+  videos: {
+    mp4: '/webm/shot-tall-4.mp4',
+    webm: '/webm/shot-tall-4.webm',
+  },
 }
 
 export default shot

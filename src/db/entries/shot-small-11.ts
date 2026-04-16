@@ -3,30 +3,25 @@ import type {EntryShot} from '../types'
 const shot: EntryShot = {
   animation: {
     from: {opacity: 0, scale: 0.88, x: -1, y: 14.5},
-    origin: 'bottom left',
+    origin: 'top top',
     to: {delay: 0.1, duration: 0.8, ease: 'bezier-out-back', opacity: 1, scale: 1, x: 0, y: 0},
   },
   area: 's11',
   description:
-    'The project architecture was reorganized into a single monorepo to support two brands mobile apps from one codebase. Turborepo is used to share core logic, UI components, and business rules between Footshop and Queens. This made it possible to create a new Queens app without copying existing code. Shared packages keep both apps consistent while still allowing brand specific customization. The setup helps speed up development and reduces long term maintenance work.',
+    'Personal exploration focused on simulating liquid behavior in a controlled 3D environment. The goal was to test new approaches to achieving a more realistic look, particularly in motion, surface tension, and interaction with light. Liquid simulation remains one of the more technically demanding areas in 3D, and this study was aimed at refining both accuracy and visual quality. I handled the full process from setup to final render.',
   image: '/jpg/shot-small-11.jpg',
   properties: [
     {
-      name: 'Product',
-      value: 'Queens',
+      name: 'Client',
+      value: 'Personal Project',
     },
     {
-      name: 'Technology',
-      value: 'Expo, React Native, TypeScript',
+      name: 'Project',
+      value: 'Simulation Studies',
     },
     {
       name: 'Industry',
-      value: 'E-commerce / Apparel / Sneakers',
-    },
-    {
-      name: 'Link',
-      url: 'https://queens.com',
-      value: 'queens.com',
+      value: 'Art / Experimental',
     },
     {
       name: 'Year',
@@ -34,9 +29,13 @@ const shot: EntryShot = {
     },
   ],
   size: 'small',
-  slug: 'queens-mobile-app',
-  title: 'Queens - Mobile App',
+  slug: 'liquid-simulation-study',
+  title: 'Liquid Simulation Study',
   variant: 'shot',
+  videos: {
+    mp4: '/mp4/shot-small-11.mp4',
+    webm: '/webm/shot-small-11.webm',
+  },
 }
 
 export default shot

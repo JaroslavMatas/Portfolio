@@ -8,35 +8,39 @@ const shot: EntryShot = {
   },
   area: 't6',
   description:
-    'I built the feedback builder where users create a feedback form from reusable question blocks. On the left side, questions can be added, reordered with drag and drop, duplicated, or removed. The right side shows a live preview that updates instantly as the form changes. There is also a preview mode to run the feedback flow as a real user would see it.',
-  image: '/jpg/shot-small-29.jpg',
+    'Vector-style animation created for social media to promote Prager’s Soda. The concept builds on the product’s packaging illustration, which I reinterpreted and expanded into a short narrative. The story follows an explorer moving through a jungle, discovering a waterfall and seamlessly transitioning into the product reveal. I redesigned the original artwork for animation and handled the full process from concept to final output.',
+  image: '/jpg/shot-tall-6.jpg',
   properties: [
     {
-      name: 'Product',
-      value: 'Meetback',
+      name: 'Client',
+      value: 'Prager’s',
     },
     {
-      name: 'Technology',
-      value: 'React, TypeScript',
+      name: 'Project',
+      value: 'Prager’s Soda Explorer Animation',
     },
     {
       name: 'Industry',
-      value: 'Business Analytics / Productivity',
+      value: 'Food & Beverage',
     },
     {
       name: 'Link',
-      url: 'https://meetback.webflow.io',
-      value: 'meetback.io',
+      url: 'https://www.pragers.cz/en',
+      value: 'pragers.cz',
     },
     {
       name: 'Year',
-      value: '2021',
+      value: '2025',
     },
   ],
   size: 'tall',
-  slug: 'meetback-feedback-builder',
-  title: 'Meetback - Feedback Builder',
+  slug: 'pragers-soda-explorer-animation',
+  title: 'Prager’s Soda Explorer Animation',
   variant: 'shot',
+  videos: {
+    mp4: '/webm/shot-tall-6.mp4',
+    webm: '/webm/shot-tall-6.webm',
+  },
 }
 
 export default shot
