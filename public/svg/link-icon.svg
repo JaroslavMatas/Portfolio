@@ -1,10 +1,9 @@
-<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="22" height="22" rx="11" fill="white" fill-opacity="0.15"/>
-<path d="M11 11L15 7" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M15 11L15 7" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M14 13V15" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M7 15H14" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M7 15V8" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M11 7L15 7" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M9 8L7 8" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6L10 2" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M10 6L10 2" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M9 8V10" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M2 10H9" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M2 10L2 3" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M6 2L10 2" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M4 3L2 3" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
 </svg>

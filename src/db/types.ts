@@ -42,6 +42,7 @@ export type EntryShot = {
   description: string
   image: string
   videos?: EntryShotVideos
+  link?: string
   area: ShotArea
   properties: EntryShotProperties
   variant: Extract<EntryVariant, 'shot'>
@@ -110,6 +111,7 @@ export type EntryPainting = {
   area: 'painting'
   variant: Extract<EntryVariant, 'painting'>
   slug: string
+  image: string
   animation?: AnimationConfig
 }
 

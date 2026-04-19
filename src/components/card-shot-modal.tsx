@@ -18,7 +18,7 @@ export type CardShotModalProps = Pick<
 const ShotProperty: FC<EntryShotProperty> = ({name, value, url}) => (
   <div className="flex flex-row py-6">
     <div className="flex-1">
-      <span className="text-[14px] md:text-[15px] font-normal tracking-normal align-middle text-white/50 leading-[100%]">
+      <span className="text-[14px] md:text-[15px] font-normal tracking-normal align-middle text-neutral-600 leading-[100%]">
         {name}
       </span>
     </div>
@@ -27,13 +27,13 @@ const ShotProperty: FC<EntryShotProperty> = ({name, value, url}) => (
         <a
           href={url}
           target="_blank"
-          className="text-[14px] md:text-[15px] font-normal tracking-normal align-middle text-neutral-900 leading-[100%] underline decoration-neutral-900/35 decoration-[1.5px] underline-offset-4 hover:decoration-neutral-900/55 transition-colors duration-500 ease-out"
+          className="text-[14px] md:text-[15px] font-normal tracking-normal align-middle text-neutral-800 leading-[100%] underline decoration-neutral-900/35 decoration-[1.5px] underline-offset-4 hover:decoration-neutral-900/55 transition-colors duration-500 ease-out"
         >
           {value}
         </a>
       )}
       {!url && (
-        <span className="text-[14px] md:text-[15px] font-normal tracking-normal align-middle text-neutral-900 leading-[100%]">
+        <span className="text-[14px] md:text-[15px] font-normal tracking-normal align-middle text-neutral-800 leading-[100%]">
           {value}
         </span>
       )}
@@ -66,7 +66,7 @@ export const CardShotModal: FC<CardShotModalProps> = ({
           <h2 className="text-[16px] font-normal tracking-normal align-middle mt-[40px] text-neutral-900 leading-[100%]">
             {title}
           </h2>
-          <p className="text-[15px] md:text-[16px] font-normal tracking-normal align-middle mt-[8px] mb-[24px] text-neutral-500 leading-[20px]">
+          <p className="text-[15px] md:text-[16px] font-normal tracking-normal align-middle mt-[8px] mb-[24px] text-neutral-700 leading-[20px]">
             {description}
           </p>
         </div>

@@ -31,7 +31,7 @@ export const CardProfileControlsKeyboard = () => {
     const tl = gsap.timeline({repeat: -1})
 
     els.forEach(el => {
-      tl.to(el, {duration: STEP, ease: 'power2.out', opacity: 0.8, scale: 0.8})
+      tl.to(el, {duration: STEP, ease: 'power2.out', opacity: 0.5, scale: 0.8})
         .to(el, {duration: GAP})
         .to(el, {duration: RESET, ease: 'power2.inOut', opacity: 0.2, scale: 1})
     })
@@ -47,27 +47,61 @@ export const CardProfileControlsKeyboard = () => {
     <div className="h-4 w-[25px] relative">
       <div className="absolute left-0 top-[4px] right-0 bottom-0">
         <div className="flex flex-col items-center gap-[0.5px]">
-          <div ref={refW} className="w-[6px] h-[6px] flex items-center justify-center opacity-20 will-change-transform">
-            <Image preload src="/svg/key-cap.svg" alt="key-cap" width={6} height={6} className="object-cover" />
+          <div
+            ref={refW}
+            className="w-[6px] h-[6px] flex items-center justify-center opacity-20 will-change-transform"
+          >
+            <Image
+              preload
+              src="/svg/key-cap.svg"
+              alt="key-cap"
+              width={6}
+              height={6}
+              className="object-cover invert"
+            />
           </div>
+
           <div className="flex flex-row gap-[0.5px]">
             <div
               ref={refA}
               className="w-[6px] h-[6px] flex items-center justify-center opacity-20 will-change-transform"
             >
-              <Image preload src="/svg/key-cap.svg" alt="key-cap" width={6} height={6} className="object-cover" />
+              <Image
+                preload
+                src="/svg/key-cap.svg"
+                alt="key-cap"
+                width={6}
+                height={6}
+                className="object-cover invert"
+              />
             </div>
+
             <div
               ref={refS}
               className="w-[6px] h-[6px] flex items-center justify-center opacity-20 will-change-transform"
             >
-              <Image preload src="/svg/key-cap.svg" alt="key-cap" width={6} height={6} className="object-cover" />
+              <Image
+                preload
+                src="/svg/key-cap.svg"
+                alt="key-cap"
+                width={6}
+                height={6}
+                className="object-cover invert"
+              />
             </div>
+
             <div
               ref={refD}
               className="w-[6px] h-[6px] flex items-center justify-center opacity-20 will-change-transform"
             >
-              <Image preload src="/svg/key-cap.svg" alt="key-cap" width={6} height={6} className="object-cover" />
+              <Image
+                preload
+                src="/svg/key-cap.svg"
+                alt="key-cap"
+                width={6}
+                height={6}
+                className="object-cover invert"
+              />
             </div>
           </div>
         </div>

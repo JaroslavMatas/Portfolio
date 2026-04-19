@@ -1,22 +1,22 @@
 export const connect = [
   {
-    name: 'hello@janblazej.dev',
+    name: 'jaroslavmatas3090@gmail.com',
     type: 'Email',
-    url: 'mailto:hello@janblazej.dev',
+    url: 'mailto:jaroslavmatas3090@gmail.com',
   },
   {
-    name: '@hzblj',
-    type: 'Instagram',
-    url: 'https://www.instagram.com/hzblj',
-  },
-  {
-    name: '@hzblj',
+    name: '@jaroslavmatas',
     type: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/hzblj',
+    url: '',
   },
   {
-    name: '@hzblj',
-    type: 'GitHub',
-    url: 'http://github.com/hzblj',
+    name: '@jaroslavmatas_',
+    type: 'Instagram',
+    url: '',
+  },
+  {
+    name: '@JaroslavMatas',
+    type: 'X.com',
+    url: '',
   },
 ]

@@ -2,7 +2,7 @@
 
 @theme {
   --card-radius: 16px;
-  --card-blur: 136px;
+  --card-blur: 100px;
   --card-border-width: 1px;
   --card-border-angle: 160deg;
 
@@ -18,7 +18,7 @@
     rgba(0, 0, 0, 0.14) 8.56%,
     rgba(0, 0, 0, 0.02) 37.96%,
     rgba(0, 0, 0, 0.02) 50.19%,
-    rgba(0, 0, 0, 0.1) 80.06%
+    rgba(0, 0, 0, 0.1) 80.06% 
   );
 }
 
@@ -35,10 +35,9 @@
   --card-border-angle: 134.62deg;
   --card-border-gradient: linear-gradient(
     var(--card-border-angle),
-    rgba(0, 0, 0, 0.14) 8.56%,
-    rgba(0, 0, 0, 0.02) 37.96%,
-    rgba(0, 0, 0, 0.02) 50.19%,
-    rgba(0, 0, 0, 0.1) 80.06%
+    rgba(255, 255, 255, 0.72) 0%,
+    rgba(255, 255, 255, 0.58) 29.43%,
+    rgba(255, 255, 255, 0.64) 100%
   );
 }
 
@@ -195,6 +194,7 @@ body {
 
 .card-modal {
   position: relative;
+  background: rgba(255, 255, 255, 0.90);
   background-blend-mode: luminosity;
   -webkit-backdrop-filter: blur(var(--card-blur));
   backdrop-filter: blur(var(--card-blur));

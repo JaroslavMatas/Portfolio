@@ -1,8 +1,7 @@
 'use client'
 
-import {FC, ReactNode} from 'react'
-
-import {LinkExternal} from './link-external'
+import {FC, ReactNode, useLayoutEffect, useRef} from 'react'
+import gsap from 'gsap'
 
 const SectionTitle: FC<{children: ReactNode}> = ({children}) => (
   <div className="h-[17px]">
@@ -14,93 +13,152 @@ const Paragraph: FC<{children: ReactNode}> = ({children}) => (
   <p className="block font-normal text-[14px] leading-[22px] tracking-[0px] text-neutral-500">{children}</p>
 )
 
-const Chip: FC<{children: ReactNode}> = ({children}) => (
-  <span className="rounded-full border border-neutral-900/10 px-[12px] py-[7px] text-[13px] leading-[100%] text-neutral-700">
-    {children}
-  </span>
-)
+type RevealOptions = {
+  sectionSelector?: string
+  nodeSelector?: string
+  nodeStagger?: number
+  nodeDuration?: number
+  sectionGap?: number
+  ease?: gsap.EaseString
+  from?: gsap.TweenVars
+  to?: gsap.TweenVars
+  enable?: boolean
+  scope?: React.RefObject<HTMLDivElement | null>
+}
+
+const useAboutSequentialReveal = ({
+  sectionSelector = '[data-about-section]',
+  nodeSelector = '[data-about-reveal]',
+  nodeStagger = 0.025,
+  nodeDuration = 0.35,
+  sectionGap = 0.02,
+  ease = 'power2.out',
+  from = {opacity: 0, y: 10},
+  to = {opacity: 1, y: 0},
+  enable = true,
+  scope,
+}: RevealOptions = {}) => {
+  useLayoutEffect(() => {
+    if (!enable || !scope?.current) {
+      return
+    }
+
+    const ctx = gsap.context(() => {
+      const sections = gsap.utils.toArray<HTMLElement>(sectionSelector)
+
+      if (!sections.length) {
+        return
+      }
+
+      const master = gsap.timeline({defaults: {ease}})
+
+      sections.forEach((section, i) => {
+        const nodes = gsap.utils.toArray<HTMLElement>(section.querySelectorAll(nodeSelector))
+
+        if (!nodes.length) {
+          return
+        }
+
+        const sectionTL = gsap.timeline()
+
+        sectionTL.fromTo(
+          nodes,
+          {...from},
+          {...to, duration: nodeDuration, force3D: true, stagger: nodeStagger, willChange: 'transform, opacity'}
+        )
+
+        master.add(sectionTL, i === 0 ? 0 : `>${sectionGap}`)
+      })
+    }, scope)
+
+    return () => ctx.revert()
+  }, [sectionSelector, nodeSelector, nodeStagger, nodeDuration, sectionGap, ease, from, to, enable, scope])
+}
 
 const AboutSection: FC<{title: string; children: ReactNode}> = ({title, children}) => (
-  <div className="flex flex-col gap-[24px]">
-    <SectionTitle>{title}</SectionTitle>
+  <div className="flex flex-col gap-[24px]" data-about-section="true">
+    <div data-about-reveal="true">
+      <SectionTitle>{title}</SectionTitle>
+    </div>
     {children}
   </div>
 )
 
 export type AboutProps = {
   children?: ReactNode
+  animated?: boolean
 }
 
-export const About: FC<AboutProps> = ({children}) => {
+export const About: FC<AboutProps> = ({children, animated = false}) => {
+  const ref = useRef<HTMLDivElement>(null)
+
+  useAboutSequentialReveal({
+    enable: animated,
+    scope: ref,
+  })
+
   return (
-    <div className="h-full w-full flex flex-col max-w-[572px]">
+    <div ref={ref} className="h-full w-full flex flex-col max-w-[572px]">
       <div className="w-full h-full flex flex-col gap-[44px] md:gap-[56px]">
-        <AboutSection title="About">
-          <div className="flex flex-col gap-[16px]">
-            <h2 className="text-[32px] leading-[100%] font-normal tracking-[0px] text-neutral-900">
-              Jaroslav Matas
-            </h2>
-            <p className="text-[18px] leading-[24px] font-normal tracking-[0px] text-neutral-700">
-              3D and motion designer focused on product visuals, digital experiences and visual storytelling.
-            </p>
-          </div>
-        </AboutSection>
-
-        <AboutSection title="What I do">
+        <AboutSection title="Who am I?">
           <div className="flex flex-col gap-[24px]">
-            <Paragraph>
-              I create motion, 3D and visual systems for products, brands and digital experiences. My work sits
-              between design, storytelling and strategy.
-            </Paragraph>
-            <Paragraph>
-              I focus on visuals that make ideas easier to understand, products more desirable and brands more
-              memorable. Sometimes that means product animation, sometimes interactive web visuals, and sometimes a
-              broader creative direction for a launch.
-            </Paragraph>
-            <Paragraph>
-              I am especially interested in startups, product companies and forward looking brands. I use whatever
-              tool makes the most sense for the final outcome, rather than building my work around one specific
-              software.
-            </Paragraph>
+            <div data-about-reveal="true">
+              <Paragraph>
+                Art has always been the starting point of everything I do. I began drawing and painting as a child,
+                and that early connection to making things still shapes the way I approach every project today. What
+                started as traditional art gradually evolved into digital design, animation, and eventually 3D, where
+                I found a medium that allows me to combine visual thinking, movement, and technical precision.
+              </Paragraph>
+            </div>
+
+            <div data-about-reveal="true">
+              <Paragraph>
+                My work is driven by curiosity and a strong maker mindset. I enjoy building things from the ground up,
+                whether it is a visual concept, a motion system, or a complete experience. Over time, this approach
+                led me from freelance projects to studio collaboration, where I learned how to develop work within
+                larger teams and more complex productions, and how to bring ideas to a professional level of execution.
+              </Paragraph>
+            </div>
+
+            <div data-about-reveal="true">
+              <Paragraph>
+                Alongside my design work, I co-founded LAPZ, an AR and VR startup focused on creating new ways to
+                experience motorsports through immersive technology. Working on a product from concept to release
+                shaped my thinking beyond visuals and taught me to see creativity as a tool for building systems, not
+                only images.
+              </Paragraph>
+            </div>
+
+            <div data-about-reveal="true">
+              <Paragraph>
+                Today I work as a freelance motion and 3D designer, combining an artistic background with product
+                thinking and technical execution. Outside of client work, I spend my time drawing, painting, cooking,
+                building furniture, and experimenting with new ideas, anything that keeps the connection between
+                imagination and making alive.
+              </Paragraph>
+            </div>
           </div>
         </AboutSection>
 
-        <AboutSection title="Focus">
-          <div className="flex flex-wrap gap-[10px]">
-            <Chip>3D visuals</Chip>
-            <Chip>Motion design</Chip>
-            <Chip>Product storytelling</Chip>
-            <Chip>Web visuals</Chip>
-            <Chip>Creative direction</Chip>
-            <Chip>AR / VR concepts</Chip>
-          </div>
-        </AboutSection>
-
-        <AboutSection title="Approach">
+        <AboutSection title="What do I do?">
           <div className="flex flex-col gap-[24px]">
-            <Paragraph>
-              I care about the result more than the tool. I work across 3D, motion, editing and digital design,
-              depending on what best serves the idea.
-            </Paragraph>
-            <Paragraph>
-              The goal is not to make something flashy for its own sake, but to create visuals that support the
-              product, the message and the audience.
-            </Paragraph>
-          </div>
-        </AboutSection>
+            <div data-about-reveal="true">
+              <Paragraph>
+                I design and build visual experiences across motion, 3D, and digital media, often working at the
+                intersection of design, technology, and product development. My focus is not on a specific tool or
+                discipline, but on finding the best way to bring an idea to life. Depending on the project, this can
+                mean animation, real-time 3D, video, interactive content, or complete visual systems.
+              </Paragraph>
+            </div>
 
-        <AboutSection title="Links">
-          <div className="flex flex-col gap-[20px]">
-            <LinkExternal url="https://www.instagram.com/">
-              <span className="text-[14px] font-normal tracking-[0px] text-neutral-500 underline decoration-neutral-900/20 decoration-[1.5px] underline-offset-4 hover:decoration-neutral-900/40 transition-colors duration-300">
-                Instagram
-              </span>
-            </LinkExternal>
-            <LinkExternal url="https://www.linkedin.com/">
-              <span className="text-[14px] font-normal tracking-[0px] text-neutral-500 underline decoration-neutral-900/20 decoration-[1.5px] underline-offset-4 hover:decoration-neutral-900/40 transition-colors duration-300">
-                LinkedIn
-              </span>
-            </LinkExternal>
+            <div data-about-reveal="true">
+              <Paragraph>
+                I enjoy working on projects that go beyond single deliverables and require a broader understanding of
+                the product, the user, and the context. My experience with startups, studio work, and freelance
+                projects taught me to approach design as part of a larger process, where creativity, functionality,
+                and business goals need to work together.
+              </Paragraph>
+            </div>
           </div>
         </AboutSection>
 

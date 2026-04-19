@@ -1,0 +1,21 @@
+    {
+      name: 'Product',
+      value: 'Lapz - Watch F1 in visionoS',
+    },
+    {
+      name: 'Project',
+      value: 'Lapz - Website',
+    },
+    {
+      name: 'Industry',
+      value: 'AR / Motorsports',
+    },
+    {
+      name: 'Link',
+      url: 'https://www.lapz.io/',
+      value: 'lapz.io',
+    },
+    {
+      name: 'Year',
+      value: '2024',
+    },

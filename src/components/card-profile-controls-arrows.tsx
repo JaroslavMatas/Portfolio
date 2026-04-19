@@ -38,7 +38,7 @@ export const CardProfileControlsArrows = () => {
           ref={ref}
           className="w-[24px] h-[24px] flex items-center justify-center will-change-transform [transform:translateZ(0)]"
         >
-          <img src="/svg/arrows.svg" alt="arrows" width={24} height={24} draggable={false} />
+          <img src="/svg/arrows.svg" alt="arrows" width={24} height={24} draggable={false} className="invert opacity-60" />
         </div>
       </div>
     </div>
