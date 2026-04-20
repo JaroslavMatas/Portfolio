@@ -2,54 +2,212 @@
 
 import {gsap} from 'gsap'
 import Image from 'next/image'
-import {createRef, type FC, forwardRef, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState} from 'react'
 import ReactDOM from 'react-dom'
-
-import {toPx} from '@/utils'
+import {FC, createRef, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState} from 'react'
 
 import {ModalCloseButton} from './modal-close-button'
 
-const indexShifter: Record<number, number> = {
-  0: 0,
-  1: 315,
-  2: 630,
+type GalleryItemData = {
+  image: string
+  alt: string
+  title: string
+  year: string
+  imageWidth: number
+  imageHeight: number
+  desktopItemClassName: string
 }
 
-const DATA = Array.from({length: 12}, (_, i) => `/png/gallery-${i + 1}.png`)
+const ITEMS: GalleryItemData[] = [
+  {
+    image: '/png/gallery-1.png',
+    alt: 'Gallery image 1',
+    title: 'Atelier session',
+    year: '2026',
+    imageWidth: 250,
+    imageHeight: 345,
+    desktopItemClassName: 'left-[18%] top-[74px]',
+  },
+  {
+    image: '/png/gallery-2.png',
+    alt: 'Gallery image 2',
+    title: 'Outdoor painting session',
+    year: '2024',
+    imageWidth: 265,
+    imageHeight: 360,
+    desktopItemClassName: 'left-[60%] top-[110px]',
+  },
+  {
+    image: '/png/gallery-3.png',
+    alt: 'Gallery image 3',
+    title: 'Levanto',
+    year: '2025',
+    imageWidth: 230,
+    imageHeight: 300,
+    desktopItemClassName: 'left-[77%] top-[700px]',
+  },
+  {
+    image: '/png/gallery-4.png',
+    alt: 'Gallery image 4',
+    title: 'Sunny walk in Prague',
+    year: '2026',
+    imageWidth: 230,
+    imageHeight: 300,
+    desktopItemClassName: 'left-[46%] top-[920px]',
+  },
+  {
+    image: '/png/gallery-5.png',
+    alt: 'Gallery image 5',
+    title: 'Bringing Hugo to his new home ',
+    year: '2026',
+    imageWidth: 255,
+    imageHeight: 350,
+    desktopItemClassName: 'left-[7%] top-[650px]',
+  },
+  {
+    image: '/png/gallery-6.png',
+    alt: 'Gallery image 6',
+    title: 'Riomaggiore',
+    year: '2025',
+    imageWidth: 360,
+    imageHeight: 220,
+    desktopItemClassName: 'left-[60%] top-[1500px]',
+  },
+  {
+    image: '/png/gallery-7.png',
+    alt: 'Gallery image 7',
+    title: 'Marseille',
+    year: '2024',
+    imageWidth: 255,
+    imageHeight: 345,
+    desktopItemClassName: 'left-[10%] top-[1400px]',
+  },
+  {
+    image: '/png/gallery-8.png',
+    alt: 'Gallery image 8',
+    title: 'Breakfast',
+    year: '2025',
+    imageWidth: 225,
+    imageHeight: 295,
+    desktopItemClassName: 'left-[68%] top-[1950px]',
+  },
+  {
+    image: '/png/gallery-9.png',
+    alt: 'Gallery image 9',
+    title: 'Prague Metro',
+    year: '2024',
+    imageWidth: 230,
+    imageHeight: 310,
+    desktopItemClassName: 'left-[22%] top-[2000px]',
+  },
+  {
+    image: '/png/gallery-10.png',
+    alt: 'Gallery image 10',
+    title: 'Family wedding',
+    year: '2025',
+    imageWidth: 240,
+    imageHeight: 320,
+    desktopItemClassName: 'left-[68%] top-[2700px]',
+  },
+  {
+    image: '/png/gallery-11.png',
+    alt: 'Gallery image 11',
+    title: 'Aix-en-Provence',
+    year: '2024',
+    imageWidth: 250,
+    imageHeight: 340,
+    desktopItemClassName: 'left-[35%] top-[2520px]',
+  },
+  {
+    image: '/png/gallery-12.png',
+    alt: 'Gallery image 12',
+    title: 'Home',
+    year: '2023',
+    imageWidth: 260,
+    imageHeight: 350,
+    desktopItemClassName: 'left-[33%] top-[3500px]',
+  },
+  {
+    image: '/png/gallery-13.png',
+    alt: 'Gallery image 13',
+    title: 'FestArt - Trenčín',
+    year: '2023',
+    imageWidth: 230,
+    imageHeight: 300,
+    desktopItemClassName: 'left-[75%] top-[3350px]',
+  },
+  {
+    image: '/png/gallery-14.png',
+    alt: 'Gallery image 14',
+    title: 'Vernazza',
+    year: '2025',
+    imageWidth: 245,
+    imageHeight: 330,
+    desktopItemClassName: 'left-[5%] top-[2770px]',
+  },
+]
 
-type GalleryItemProps = {
-  columnIndex: number
-  rowIndex: number
+type GalleryCardProps = {
+  item: GalleryItemData
   index: number
-  columns: number
+  imageRef: React.RefObject<HTMLDivElement | null>
+  captionRef: React.RefObject<HTMLDivElement | null>
+  isMobile: boolean
 }
 
-const GalleryItem = forwardRef<HTMLDivElement, GalleryItemProps>(({index, columnIndex, rowIndex, columns}, ref) => {
-  const marginTop = useMemo(() => {
-    const invertedColumnIndex = columns - 1 - columnIndex
+const GalleryCard: FC<GalleryCardProps> = ({item, index, imageRef, captionRef, isMobile}) => {
+  if (isMobile) {
+    return (
+      <div className="w-full flex flex-col items-start">
+        <div ref={imageRef} className="w-full opacity-0" onClick={e => e.stopPropagation()}>
+          <div className="relative overflow-hidden w-full rounded-[2px]">
+            <Image
+              src={item.image}
+              alt={item.alt}
+              width={item.imageWidth}
+              height={item.imageHeight}
+              className="h-auto w-full object-cover select-none"
+              draggable={false}
+            />
+          </div>
+        </div>
 
-    return rowIndex === 0 ? indexShifter[columnIndex] : -indexShifter[invertedColumnIndex]
-  }, [columnIndex, rowIndex, columns])
+        <div ref={captionRef} className="opacity-0 mt-[10px] pl-[2px]" onClick={e => e.stopPropagation()}>
+          <div className="text-[12px] leading-[1.1] tracking-[-0.01em] text-neutral-900 text-left">{item.title}</div>
+          <div className="text-[12px] leading-[1.1] tracking-[-0.01em] text-neutral-900/72 text-left">{item.year}</div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div
-      ref={ref}
-      className="w-full max-w-[356px] h-auto aspect-[356/630] pointer-events-auto opacity-0 will-change-[opacity,transform] transform-gpu"
-      style={{marginTop: toPx(marginTop)}}
+      className={`absolute ${item.desktopItemClassName}`}
+      style={{zIndex: 20 + index}}
+      onClick={e => e.stopPropagation()}
     >
-      <Image
-        src={DATA[index]}
-        loading="lazy"
-        alt={`Gallery image ${index + 1}`}
-        width={356}
-        height={630}
-        className="h-full w-full object-cover"
-        style={{objectFit: 'cover'}}
-        draggable={false}
-      />
+      <div ref={imageRef} className="relative opacity-0">
+        <div className="relative overflow-visible rounded-[2px]">
+          <Image
+            src={item.image}
+            alt={item.alt}
+            width={item.imageWidth}
+            height={item.imageHeight}
+            className="block h-auto w-full object-cover select-none"
+            draggable={false}
+          />
+
+          <div
+            ref={captionRef}
+            className="absolute left-full bottom-0 ml-[12px] opacity-0 whitespace-nowrap text-left z-[60]"
+          >
+            <div className="text-[11px] leading-[1.08] tracking-[-0.01em] text-neutral-900 text-left">{item.title}</div>
+            <div className="text-[11px] leading-[1.08] tracking-[-0.01em] text-neutral-900/72 text-left">{item.year}</div>
+          </div>
+        </div>
+      </div>
     </div>
   )
-})
+}
 
 export type GalleryProps = {
   isOpen: boolean
@@ -58,43 +216,46 @@ export type GalleryProps = {
 
 export const Gallery: FC<GalleryProps> = ({isOpen, onClose}) => {
   const modalRoot = document.getElementById('main')!
-  const cardRef = useRef<HTMLDivElement>(null)
   const backdropRef = useRef<HTMLDivElement>(null)
   const closeButtonRef = useRef<HTMLDivElement>(null)
-  const itemRefs = useMemo(() => DATA.map(() => createRef<HTMLDivElement>()), [])
+  const desktopCanvasRef = useRef<HTMLDivElement>(null)
+
+  const imageRefs = useMemo(() => ITEMS.map(() => createRef<HTMLDivElement>()), [])
+  const captionRefs = useMemo(() => ITEMS.map(() => createRef<HTMLDivElement>()), [])
 
   const [mounted, setMounted] = useState(isOpen)
-  const [columns, setColumns] = useState(3)
+  const [isMobile, setIsMobile] = useState(false)
 
   const startClose = useCallback(() => {
-    if (!cardRef.current || !backdropRef.current || !closeButtonRef.current) {
+    if (!backdropRef.current || !closeButtonRef.current) {
       return
     }
 
-    const items = itemRefs.map(ref => ref.current).filter(Boolean) as HTMLDivElement[]
+    const images = imageRefs.map(ref => ref.current).filter(Boolean) as HTMLDivElement[]
+    const captions = captionRefs.map(ref => ref.current).filter(Boolean) as HTMLDivElement[]
 
-    gsap.to(items, {
-      duration: 0.4,
-      ease: 'power3.in',
+    gsap.to([...captions, ...images], {
+      duration: 0.22,
+      ease: 'power2.inOut',
+      opacity: 0,
+    })
+
+    gsap.to(closeButtonRef.current, {
+      duration: 0.2,
+      ease: 'power2.inOut',
+      opacity: 0,
+    })
+
+    gsap.to(backdropRef.current, {
+      duration: 0.24,
+      ease: 'power2.inOut',
+      opacity: 0,
       onComplete: () => {
         setMounted(false)
         onClose()
       },
-      opacity: 0,
-      scale: 0.95,
-      stagger: {
-        amount: 0.3,
-        from: 'end',
-      },
-      y: 40,
     })
-
-    gsap.to(backdropRef.current, {
-      duration: 0.7 * (DATA.length - 1),
-      ease: 'power2.inOut',
-      opacity: 0,
-    })
-  }, [onClose, itemRefs])
+  }, [captionRefs, imageRefs, onClose])
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -113,86 +274,22 @@ export const Gallery: FC<GalleryProps> = ({isOpen, onClose}) => {
     }
   }, [isOpen])
 
-  useLayoutEffect(() => {
-    if (!mounted) {
-      return
-    }
-
-    if (!cardRef.current || !backdropRef.current || !closeButtonRef.current) {
-      return
-    }
-
-    const items = itemRefs.map(ref => ref.current).filter(Boolean) as HTMLDivElement[]
-
-    if (items.length === 0) {
-      return
-    }
-
-    gsap.set(backdropRef.current, {
-      opacity: 0,
-    })
-
-    gsap.to(backdropRef.current, {
-      duration: 0.4,
-      ease: 'power2.inOut',
-      opacity: 1,
-    })
-
-    gsap.set(closeButtonRef.current, {
-      opacity: 0,
-      scale: 0.8,
-    })
-
-    gsap.to(closeButtonRef.current, {
-      delay: 0.2,
-      duration: 0.4,
-      ease: 'power3.out',
-      opacity: 1,
-      scale: 1,
-    })
-
-    gsap.set(items, {
-      opacity: 0,
-      scale: 0.95,
-      y: 40,
-    })
-
-    gsap.to(items, {
-      delay: 0.1,
-      duration: 0.6,
-      ease: 'power3.out',
-      opacity: 1,
-      scale: 1,
-      stagger: {
-        amount: 0.4,
-        from: 'start',
-      },
-      y: 0,
-    })
-  }, [mounted, itemRefs])
-
   useEffect(() => {
     if (!mounted) {
       return
     }
 
-    const updateColumns = () => {
-      const width = window.innerWidth
-      if (width < 768) {
-        setColumns(1)
-      } else if (width < 1024) {
-        setColumns(2)
-      } else {
-        setColumns(3)
-      }
+    const updateViewport = () => {
+      setIsMobile(window.innerWidth < 900)
     }
 
-    updateColumns()
+    updateViewport()
+
     document.body.style.overflow = 'hidden'
 
     const abortController = new AbortController()
 
-    window.addEventListener('resize', updateColumns, {signal: abortController.signal})
+    window.addEventListener('resize', updateViewport, {signal: abortController.signal})
     document.addEventListener('keydown', handleKeyDown, {signal: abortController.signal})
 
     return () => {
@@ -201,35 +298,97 @@ export const Gallery: FC<GalleryProps> = ({isOpen, onClose}) => {
     }
   }, [mounted, handleKeyDown])
 
+  useLayoutEffect(() => {
+    if (!mounted || !backdropRef.current || !closeButtonRef.current) {
+      return
+    }
+
+    const images = imageRefs.map(ref => ref.current).filter(Boolean) as HTMLDivElement[]
+    const captions = captionRefs.map(ref => ref.current).filter(Boolean) as HTMLDivElement[]
+
+    gsap.set(backdropRef.current, {opacity: 0})
+    gsap.set(closeButtonRef.current, {opacity: 0})
+    gsap.set(images, {opacity: 0})
+    gsap.set(captions, {opacity: 0})
+
+    gsap.to(backdropRef.current, {
+      duration: 0.26,
+      ease: 'power2.out',
+      opacity: 1,
+    })
+
+    gsap.to(closeButtonRef.current, {
+      duration: 0.24,
+      delay: 0.08,
+      ease: 'power2.out',
+      opacity: 1,
+    })
+
+    gsap.to(images, {
+      duration: 0.34,
+      delay: 0.08,
+      ease: 'power2.out',
+      opacity: 1,
+      stagger: 0.035,
+    })
+
+    gsap.to(captions, {
+      duration: 0.28,
+      delay: 0.16,
+      ease: 'power2.out',
+      opacity: 1,
+      stagger: 0.028,
+    })
+  }, [mounted, imageRefs, captionRefs, isMobile])
+
   if (!mounted) {
     return null
   }
 
   return ReactDOM.createPortal(
-    <div className="fixed inset-0 z-40 w-screen h-screen overflow-auto block">
-      <div ref={backdropRef} className="fixed inset-0 bg-neutral-900/25 will-change-[opacity]" />
-      <div className="flex w-full min-h-full mx-auto py-10 relative justify-center" onClick={startClose}>
-        <div
-          ref={cardRef}
-          className="flex flex-col w-full items-center justify-center z-40 overflow-hidden will-change-transform [backface-visibility:hidden] transform-gpu mx-[12px] md:mx-0 mb-[56px] md:mb-0 pointer-events-none px-4 md:px-8 lg:px-[44px]"
-          onClick={e => e.stopPropagation()}
-        >
-          <div className="relative overflow-hidden w-full">
-            <div className="relative z-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[48px] justify-items-center mx-auto w-full max-w-[356px] md:max-w-[760px] lg:max-w-[1252px]">
-              {DATA.map((_, index) => (
-                <GalleryItem
-                  key={index.toString()}
-                  ref={itemRefs[index]}
-                  columnIndex={index % columns}
-                  rowIndex={Math.floor(index / columns)}
-                  columns={columns}
+    <div className="fixed inset-0 z-40 w-screen h-screen">
+      <div
+        ref={backdropRef}
+        className="absolute inset-0 bg-[rgba(247,245,241,0.76)] backdrop-blur-[6px] will-change-[opacity]"
+        onClick={startClose}
+      />
+
+      <div className="relative z-10 w-full h-full overflow-y-auto overflow-x-hidden" onClick={startClose}>
+        <div className="min-h-full w-full px-[20px] md:px-[34px] lg:px-[42px] pt-[88px] pb-[160px]">
+          {isMobile ? (
+            <div className="w-full max-w-[460px] mx-auto flex flex-col gap-[42px]">
+              {ITEMS.map((item, index) => (
+                <GalleryCard
+                  key={`${item.image}-${index}`}
+                  item={item}
                   index={index}
+                  imageRef={imageRefs[index]}
+                  captionRef={captionRefs[index]}
+                  isMobile
                 />
               ))}
             </div>
-          </div>
+          ) : (
+            <div
+              ref={desktopCanvasRef}
+              className="relative mx-auto w-full max-w-[1480px]"
+              style={{height: 3900}}
+            >
+              {ITEMS.map((item, index) => (
+                <GalleryCard
+                  key={`${item.image}-${index}`}
+                  item={item}
+                  index={index}
+                  imageRef={imageRefs[index]}
+                  captionRef={captionRefs[index]}
+                  isMobile={false}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
+
       <ModalCloseButton ref={closeButtonRef} onClose={startClose} />
     </div>,
     modalRoot

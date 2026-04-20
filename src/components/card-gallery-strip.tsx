@@ -2,134 +2,178 @@
 
 import gsap from 'gsap'
 import Image from 'next/image'
-import {createRef, FC, forwardRef, type PointerEvent, useCallback, useMemo, useRef} from 'react'
+import {FC, useLayoutEffect, useMemo, useRef} from 'react'
 
-const items: string[] = [
-  '/png/gallery-1.png',
-  '/png/gallery-2.png',
-  '/png/gallery-3.png',
-  '/png/gallery-4.png',
-  '/png/gallery-5.png',
-  '/png/gallery-6.png',
-]
-
-const UN_HOVERED_OPACITY = 0.5
-const HOVERED_OPACITY = 1.0
-const HOVERED_FLEX_GROW = 2.0
-const UN_HOVERED_FLEX_GROW = 0.6
-
-type CardGalleryStripeItemProps = {
-  url: string
-  index: number
-  expand: (index: number) => void
-  onLoad: () => void
+type ClosedGalleryItem = {
+  src: string
+  alt: string
+  width: number
+  height: number
+  className: string
+  imageClassName: string
+  hoverX: number
+  hoverY: number
+  hoverScale: number
+  zIndex: number
 }
 
-const CardGalleryStripeItem = forwardRef<HTMLDivElement, CardGalleryStripeItemProps>(
-  ({url, expand, index, onLoad}, ref) => {
-    const onHover = useCallback(
-      (e: PointerEvent) => {
-        if (e.pointerType === 'mouse') {
-          expand(index)
-        }
-      },
-      [expand, index]
-    )
-
-    return (
-      <div
-        ref={ref}
-        className="group relative flex-[1_1_0%] min-w-0 cursor-pointer"
-        onPointerEnter={onHover}
-        onPointerOver={onHover}
-        onLoad={onLoad}
-        role="button"
-      >
-        <Image
-          src={url}
-          loading="lazy"
-          alt={`gallery image ${index + 1}`}
-          width={276.93}
-          height={445}
-          className="absolute top-0 left-1/2 -translate-x-1/2 h-full w-auto object-cover will-change-[flex-grow,opacity]"
-          style={{objectFit: 'cover'}}
-          draggable={false}
-        />
-      </div>
-    )
-  }
-)
+const ITEMS: ClosedGalleryItem[] = [
+  {
+    src: '/png/gallery-1.png',
+    alt: 'Gallery image 1',
+    width: 420,
+    height: 260,
+    className: 'left-[-10%] top-[-50%]',
+    imageClassName: 'h-[34%] w-auto scale-[0.5] origin-center',
+    hoverX: -6,
+    hoverY: -4,
+    hoverScale: 1.018,
+    zIndex: 1,
+  },
+  {
+    src: '/png/gallery-2.png',
+    alt: 'Gallery image 2',
+    width: 300,
+    height: 600,
+    className: 'left-[50%] top-[-40%]',
+    imageClassName: 'h-[50%] w-auto scale-[0.6] origin-center',
+    hoverX: -7,
+    hoverY: 6,
+    hoverScale: 1.016,
+    zIndex: 2,
+  },
+  {
+    src: '/png/gallery-3.png',
+    alt: 'Gallery image 3',
+    width: 480,
+    height: 620,
+    className: 'left-[70%] top-[-10%]',
+    imageClassName: 'h-[52%] w-auto scale-[0.6] origin-center',
+    hoverX: 0,
+    hoverY: -8,
+    hoverScale: 1.022,
+    zIndex: 4,
+  },
+  {
+    src: '/png/gallery-4.png',
+    alt: 'Gallery image 4',
+    width: 360,
+    height: 480,
+    className: 'right-[0%] top-[0%]',
+    imageClassName: 'h-[41%] w-auto scale-[0.6] origin-center',
+    hoverX: 7,
+    hoverY: -4,
+    hoverScale: 1.016,
+    zIndex: 2,
+  },
+  {
+    src: '/png/gallery-5.png',
+    alt: 'Gallery image 5',
+    width: 420,
+    height: 280,
+    className: 'left-[-5%] bottom-[-18%]',
+    imageClassName: 'h-[34%] w-auto scale-[0.6] origin-center',
+    hoverX: -4,
+    hoverY: 7,
+    hoverScale: 1.014,
+    zIndex: 1,
+  },
+  {
+    src: '/png/gallery-6.png',
+    alt: 'Gallery image 6',
+    width: 360,
+    height: 410,
+    className: 'right-[4%] bottom-[-20%]',
+    imageClassName: 'h-[37%] w-auto scale-[0.6] origin-center',
+    hoverX: 6,
+    hoverY: 8,
+    hoverScale: 1.016,
+    zIndex: 1,
+  },
+]
 
 export const CardGalleryStrip: FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null)
-  const panelRefs = useMemo(() => items.map(() => createRef<HTMLDivElement>()), [])
+  const itemRefs = useRef<Array<HTMLDivElement | null>>([])
 
-  const reset = useCallback(() => {
-    gsap.to(panelRefs.map(r => r.current).filter(Boolean), {
-      duration: 0.5,
-      ease: 'power3.out',
-      flexGrow: 1,
-      opacity: UN_HOVERED_OPACITY,
+  const items = useMemo(() => ITEMS, [])
+
+  useLayoutEffect(() => {
+    const elements = itemRefs.current.filter(Boolean) as HTMLDivElement[]
+
+    if (!elements.length) {
+      return
+    }
+
+    gsap.set(elements, {
+      x: 0,
+      y: 0,
+      scale: 1,
+      transformOrigin: '50% 50%',
+      willChange: 'transform',
     })
-  }, [panelRefs])
 
-  const expand = useCallback(
-    (index: number) => {
-      const allPanels = panelRefs.map(r => r.current).filter(Boolean)
+    return () => {
+      gsap.killTweensOf(elements)
+    }
+  }, [])
 
-      gsap.to(allPanels, {
-        duration: 0.5,
+  const handlePointerEnter = () => {
+    const elements = itemRefs.current.filter(Boolean) as HTMLDivElement[]
+
+    elements.forEach((el, index) => {
+      const item = items[index]
+
+      gsap.to(el, {
+        duration: 0.7,
         ease: 'power3.out',
-        flexGrow: UN_HOVERED_FLEX_GROW,
-        opacity: UN_HOVERED_OPACITY,
+        x: item.hoverX,
+        y: item.hoverY,
+        scale: item.hoverScale,
       })
+    })
+  }
 
-      const target = panelRefs[index]?.current
+  const handlePointerLeave = () => {
+    const elements = itemRefs.current.filter(Boolean) as HTMLDivElement[]
 
-      if (target) {
-        gsap.to(target, {duration: 0.5, ease: 'power3.out', flexGrow: HOVERED_FLEX_GROW, opacity: HOVERED_OPACITY})
-      }
-    },
-    [panelRefs]
-  )
-
-  const onLoad = useCallback(
-    (index: number) => () => {
-      const target = panelRefs[index]?.current
-
-      if (target) {
-        gsap.set(target, {opacity: UN_HOVERED_OPACITY})
-      }
-    },
-    [panelRefs]
-  )
-
-  const onLeave = useCallback(
-    (e: PointerEvent) => {
-      if (e.pointerType === 'mouse') {
-        reset()
-      }
-    },
-    [reset]
-  )
+    gsap.to(elements, {
+      duration: 0.75,
+      ease: 'power3.out',
+      x: 0,
+      y: 0,
+      scale: 1,
+    })
+  }
 
   return (
     <div
       ref={containerRef}
-      className="relative overflow-hidden flex grow w-full h-full"
+      className="relative overflow-hidden w-full h-full bg-[#eceae6]"
       style={{clipPath: 'inset(1px round 16px)'}}
-      onPointerLeave={onLeave}
+      onPointerEnter={handlePointerEnter}
+      onPointerLeave={handlePointerLeave}
     >
-      <div className="absolute inset-0 flex">
+      <div className="absolute inset-0">
         {items.map((item, index) => (
-          <CardGalleryStripeItem
-            key={index}
-            ref={panelRefs[index]}
-            expand={expand}
-            url={item}
-            index={index}
-            onLoad={onLoad(index)}
-          />
+          <div
+            key={`${item.src}-${index}`}
+            ref={el => {
+              itemRefs.current[index] = el
+            }}
+            className={`absolute ${item.className}`}
+            style={{zIndex: item.zIndex}}
+          >
+            <Image
+              src={item.src}
+              alt={item.alt}
+              width={item.width}
+              height={item.height}
+              className={`${item.imageClassName} select-none pointer-events-none max-w-none`}
+              draggable={false}
+              priority={index < 3}
+            />
+          </div>
         ))}
       </div>
     </div>
