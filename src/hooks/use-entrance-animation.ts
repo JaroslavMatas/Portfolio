@@ -4,7 +4,7 @@ import {type RefObject, useEffect, useLayoutEffect} from 'react'
 import type {AnimationConfig} from '@/db/types'
 import {useIntro} from '@/providers'
 
-export const useEntranceAnimation = (ref: RefObject<HTMLDivElement | null>, animation?: AnimationConfig) => {
+export const useEntranceAnimation = (ref: RefObject<HTMLElement | null>, animation?: AnimationConfig) => {
   const {introComplete} = useIntro()
 
   useLayoutEffect(() => {
