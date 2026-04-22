@@ -38,7 +38,7 @@ const shot: EntryShot = {
   title: 'Paola Paola Floating Ring Teaser',
   variant: 'shot',
   videos: {
-    mp4: '/webm/shot-tall-4.mp4',
+    mp4: '/mp4/shot-tall-4.mp4',
     webm: '/webm/shot-tall-4.webm',
   },
 }

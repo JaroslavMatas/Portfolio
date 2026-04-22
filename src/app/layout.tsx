@@ -25,10 +25,10 @@ export const metadata: Metadata = {
   appleWebApp: {
     statusBarStyle: 'default',
   },
-  authors: [{name: 'Jaroslav Matas', url: 'https://janblazej.dev'}],
+  authors: [{name: 'Jaroslav Matas', url: 'https://jaroslavmatas.com'}],
   creator: 'Jaroslav Matas',
   description:
-    'Experienced Lead Mobile Developer specializing in React Native, Expo, and TypeScript. Building high-performance mobile applications for iOS and Android. Based in Prague, Czechia.',
+    'Portfolio of Jaroslav Matas, a Prague-based 3D and motion designer creating product visuals, brand storytelling, and motion-driven digital experiences.',
   icons: {
     apple: '/apple-touch-icon.png',
     icon: [
@@ -39,24 +39,27 @@ export const metadata: Metadata = {
   },
   keywords: [
     'Jaroslav Matas',
-    'Lead Mobile Developer',
-    'React Native Developer',
-    'Expo Developer',
-    'TypeScript',
-    'iOS Development',
-    'Android Development',
-    'Mobile App Development',
-    'Prague Developer',
-    'Footshop',
-    'visionOS',
-    'Swift',
-    'RealityKit',
+    'Jaroslav Matas portfolio',
+    '3D motion designer',
+    'motion designer',
+    '3D artist',
+    '3D animator',
+    'motion design portfolio',
+    'product animation',
+    'product visualization',
+    'brand storytelling',
+    'visual design',
+    'art direction',
+    'Blender',
+    'freelance motion designer',
+    'Prague',
+    'Czechia',
   ],
   manifest: '/site.webmanifest',
-  metadataBase: new URL('https://janblazej.dev'),
+  metadataBase: new URL('https://jaroslavmatas.com'),
   openGraph: {
     description:
-      'Experienced Lead Mobile Developer specializing in React Native, Expo, and TypeScript. Building high-performance mobile applications for iOS and Android.',
+      'Portfolio of Jaroslav Matas, a Prague-based 3D and motion designer creating product visuals, brand storytelling, and motion-driven digital experiences.',
     images: [
       {
         alt: 'Jaroslav Matas - 3D & Motion Design',
@@ -69,7 +72,7 @@ export const metadata: Metadata = {
     siteName: 'Jaroslav Matas Portfolio',
     title: 'Jaroslav Matas - 3D & Motion Design',
     type: 'website',
-    url: 'https://janblazej.dev',
+    url: 'https://jaroslavmatas.com',
   },
   publisher: 'Jaroslav Matas',
   robots: {
@@ -84,15 +87,15 @@ export const metadata: Metadata = {
     index: true,
   },
   title: {
-    default: 'Jaroslav Matas - Lead Mobile Developer & Founder',
+    default: 'Jaroslav Matas - 3D & Motion Design',
     template: '%s | Jaroslav Matas',
   },
   twitter: {
     card: 'summary_large_image',
     description:
-      'Experienced Lead Mobile Developer specializing in React Native, Expo, and TypeScript. Building high-performance mobile applications.',
+      'Portfolio of Jaroslav Matas, a Prague-based 3D and motion designer creating product visuals, brand storytelling, and motion-driven digital experiences.',
     images: ['/png/og-image.png'],
-    title: 'Jaroslav Matas - Lead Mobile Developer & Founder',
+    title: 'Jaroslav Matas - 3D & Motion Design',
   },
 }
 
@@ -109,28 +112,24 @@ export default function RootLayout({children}: Props) {
       addressCountry: 'CZ',
       addressLocality: 'Prague',
     },
-    email: 'hello@janblazej.dev',
-    image: 'https://janblazej.dev/png/profile@3x.png',
-    jobTitle: 'Lead Mobile Developer & Founder',
+    email: 'jaroslavmatas3090@gmail.com',
+    image: 'https://jaroslavmatas.com/png/profile@3x.png',
+    jobTitle: '3D Motion Designer',
     knowsAbout: [
-      'React Native',
-      'Expo',
-      'TypeScript',
-      'iOS Development',
-      'Android Development',
-      'Mobile App Development',
-      'Swift',
-      'visionOS',
-      'RealityKit',
+      '3D Animation',
+      'Motion Design',
+      'Product Visualization',
+      'Brand Storytelling',
+      'Visual Design',
+      'Art Direction',
+      'Blender',
     ],
     name: 'Jaroslav Matas',
-    sameAs: ['https://www.linkedin.com/in/hzblj', 'https://github.com/hzblj', 'https://www.instagram.com/hzblj'],
-    url: 'https://janblazej.dev',
-    worksFor: {
-      '@type': 'Organization',
-      name: 'Footshop',
-      url: 'https://footshop.com',
-    },
+    sameAs: [
+      'https://www.linkedin.com/in/jaroslav-matas-4a4b05250/',
+      'https://www.instagram.com/jaroslavmatas_/',
+    ],
+    url: 'https://jaroslavmatas.com',
   }
 
   return (

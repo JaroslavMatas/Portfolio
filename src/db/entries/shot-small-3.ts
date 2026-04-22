@@ -8,12 +8,12 @@ const shot: EntryShot = {
   },
   area: 's3',
   description:
-    'Teaser created to launch Planeta Liga, a project developed for the Czech top football competition Chance Liga to engage a younger audience. The video introduces a stylized universe of the league through a cast of original 3D characters, each representing different traits and energy. I contributed extensive 3D work across the piece, including character development, rigging, animation, and environment creation, as well as preparing assets for a wide range of outputs. My focus was on building a cohesive visual world that could scale across formats.',
+    'Teaser created for Planeta Liga, a project developed for the Czech top football competition Chance Liga to engage a younger audience. The video introduces a stylized universe built around a cast of original 3D characters, each representing different traits and energy. I contributed across the full 3D pipeline, including character development, rigging, animation, and environment creation, with a focus on building a cohesive visual world scalable across multiple formats.',
   image: '/jpg/shot-small-3.jpg',
   properties: [
     {
       name: 'Client',
-      value: 'Chance League',
+      value: 'Chance Liga',
     },
     {
       name: 'Project',
@@ -38,7 +38,7 @@ const shot: EntryShot = {
   title: 'Planeta Liga Teaser',
   variant: 'shot',
   videos: {
-    mp4: '/webm/shot-small-3.mp4',
+    mp4: '/mp4/shot-small-3.mp4',
     webm: '/webm/shot-small-3.webm',
   },
 }

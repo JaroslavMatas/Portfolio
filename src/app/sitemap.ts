@@ -1,24 +1,24 @@
 import {entries} from '@/db'
 
 export default function sitemap() {
-  const baseUrl = 'https://janblazej.dev'
+  const baseUrl = 'https://jaroslavmatas.com'
 
   const routes = [
     {
-      changeFrequency: 'monthly' as const,
-      lastModified: new Date(),
-      priority: 1,
       url: baseUrl,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 1,
     },
   ]
 
   const shotRoutes = entries
-    .filter(entry => entry.variant === 'shot')
+    .filter(entry => entry.variant === 'shot' && entry.slug)
     .map(entry => ({
-      changeFrequency: 'monthly' as const,
-      lastModified: new Date(),
-      priority: 0.8,
       url: `${baseUrl}/${entry.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
     }))
 
   return [...routes, ...shotRoutes]

@@ -38,7 +38,7 @@ const shot: EntryShot = {
   title: 'Prager’s Kombucha Fridge Animation for UGO stores',
   variant: 'shot',
   videos: {
-    mp4: '/webm/shot-tall-5.mp4',
+    mp4: '/mp4/shot-tall-5.mp4',
     webm: '/webm/shot-tall-5.webm',
   },
 }

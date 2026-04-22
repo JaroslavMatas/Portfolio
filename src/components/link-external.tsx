@@ -4,15 +4,29 @@ import gsap from 'gsap'
 import {type FC, PointerEvent, type ReactNode, useCallback, useRef} from 'react'
 import {cn} from '@/utils'
 
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void
+  }
+}
+
 export type LinkExternalVariant = 'default' | 'muted'
 
 export type LinkExternalProps = {
   url: string
   children: ReactNode
   variant?: LinkExternalVariant
+  trackingName?: string
+  trackingCategory?: 'link_click' | 'cv_download' | 'social_click' | 'company_click'
 }
 
-export const LinkExternal: FC<LinkExternalProps> = ({url, children, variant = 'default'}) => {
+export const LinkExternal: FC<LinkExternalProps> = ({
+  url,
+  children,
+  variant = 'default',
+  trackingName,
+  trackingCategory = 'link_click',
+}) => {
   const lineRef = useRef<HTMLDivElement>(null)
   const hoverLineRef = useRef<HTMLDivElement>(null)
   const isMuted = variant === 'muted'
@@ -70,11 +84,19 @@ export const LinkExternal: FC<LinkExternalProps> = ({url, children, variant = 'd
     [isMuted]
   )
 
+  const handleClick = useCallback(() => {
+    window.gtag?.('event', trackingCategory, {
+      label: trackingName ?? url,
+      destination: url,
+    })
+  }, [trackingCategory, trackingName, url])
+
   return (
     <a
       href={url}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={handleClick}
       onPointerEnter={handleEnter}
       onPointerOver={handleEnter}
       onPointerLeave={handleLeave}

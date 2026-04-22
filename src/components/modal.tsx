@@ -7,7 +7,7 @@ import {cn} from '@/utils'
 
 import {ModalCloseButton} from './modal-close-button'
 
-export type ModalVariant = 'small' | 'large'
+export type ModalVariant = 'small' | 'large' | 'wide'
 
 export type ModalProps = {
   isOpen: boolean
@@ -19,6 +19,7 @@ export type ModalProps = {
 const modalVariants: Record<ModalVariant, string> = {
   large: 'max-w-[700px]',
   small: 'max-w-[512px]',
+  wide: 'max-w-[820px]',
 }
 
 export const Modal: FC<ModalProps> = ({isOpen, onClose, children, variant = 'small'}) => {

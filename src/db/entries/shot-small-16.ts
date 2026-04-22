@@ -38,7 +38,7 @@ const shot: EntryShot = {
   title: 'Prager’s Kombucha Touchscreen in Store',
   variant: 'shot',
   videos: {
-    mp4: '/webm/shot-small-16.mp4',
+    mp4: '/mp4/shot-small-16.mp4',
     webm: '/webm/shot-small-16.webm',
   },
 }

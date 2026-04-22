@@ -162,32 +162,65 @@ const SectionTitle: FC<Pick<CVSection, 'positions' | 'location' | 'technologies'
   </div>
 )
 
-const SectionProject: FC<CVSectionProject> = ({name, position, technologies, paragraphs, url}) => (
+const SectionProject: FC<CVSectionProject> = ({
+  name,
+  suffix,
+  secondaryName,
+  secondaryUrl,
+  position,
+  technologies,
+  paragraphs,
+  url,
+}) => (
   <div>
     <div className="flex flex-col gap-[2px] pb-[2px]">
-      <div>
+      <div
+        data-cv-reveal="true"
+        className="block font-normal text-[14px] leading-[22px] tracking-[0px] text-neutral-800"
+      >
         {url ? (
           <a
             href={url}
             target="_blank"
-            data-cv-reveal="true"
-            className="block font-normal text-[14px] leading-[22px] tracking-[0px] text-neutral-800 underline decoration-neutral-900/20 decoration-[1.5px] underline-offset-4 hover:decoration-neutral-900/40 transition-colors duration-300 ease-in-out"
+            rel="noopener noreferrer"
+            onClick={() => {
+              window.gtag?.('event', 'project_click', {
+                label: name,
+                destination: url,
+              })
+            }}
+            className="underline decoration-neutral-900/20 decoration-[1.5px] underline-offset-4 hover:decoration-neutral-900/40 transition-colors duration-300 ease-in-out"
           >
             {name}
           </a>
         ) : (
-          <span
-            data-cv-reveal="true"
-            className="block font-normal text-[14px] leading-[22px] tracking-[0px] text-neutral-800"
-          >
-            {name}
-          </span>
+          <span>{name}</span>
         )}
+
+        {secondaryName && secondaryUrl ? (
+          <>
+            <span> - </span>
+            <a
+              href={secondaryUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                window.gtag?.('event', 'project_click', {
+                  label: secondaryName,
+                  destination: secondaryUrl,
+                })
+              }}
+              className="underline decoration-neutral-900/20 decoration-[1.5px] underline-offset-4 hover:decoration-neutral-900/40 transition-colors duration-300 ease-in-out"
+            >
+              {secondaryName}
+            </a>
+          </>
+        ) : null}
+
+        {suffix ? <span>{suffix}</span> : null}
       </div>
 
-      {position ? (
-        <span className="text-[14px] text-neutral-600">{position}</span>
-      ) : null}
+      {position ? <span className="text-[14px] text-neutral-600">{position}</span> : null}
 
       {technologies?.length ? <SectionTechnologies technologies={technologies} /> : null}
     </div>
@@ -308,6 +341,17 @@ export const CV: FC = () => {
       <SectionConnect />
 
       <SectionLanguagesAndLocations />
+
+      <div data-cv-section="true" className="flex justify-center">
+        <LinkExternal url="/pdf/cv.pdf" trackingCategory="cv_download" trackingName="Download CV in PDF">
+          <span
+            data-cv-reveal="true"
+            className="text-[14px] font-normal tracking-[0px] bg-[linear-gradient(180deg,#171717_0%,rgba(23,23,23,0.65)_100%)] bg-clip-text text-transparent"
+          >
+            Download CV in PDF
+          </span>
+        </LinkExternal>
+      </div>
     </div>
   )
 }

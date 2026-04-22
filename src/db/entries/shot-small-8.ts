@@ -38,7 +38,7 @@ const shot: EntryShot = {
   title: 'Planeta Liga Character - OFF',
   variant: 'shot',
   videos: {
-    mp4: '/webm/shot-small-8.mp4',
+    mp4: '/mp4/shot-small-8.mp4',
     webm: '/webm/shot-small-8.webm',
   },
 }

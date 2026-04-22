@@ -104,37 +104,36 @@ export const About: FC<AboutProps> = ({children, animated = false}) => {
           <div className="flex flex-col gap-[24px]">
             <div data-about-reveal="true">
               <Paragraph>
-                Art has always been the starting point of everything I do. I began drawing and painting as a child,
-                and that early connection to making things still shapes the way I approach every project today. What
-                started as traditional art gradually evolved into digital design, animation, and eventually 3D, where
-                I found a medium that allows me to combine visual thinking, movement, and technical precision.
+                I am a freelance 3D and motion designer based in Prague. My background started in traditional art,
+                drawing and painting, and over time evolved into digital design, animation, and 3D. That foundation
+                still shapes the way I work today: I care about atmosphere, composition, detail, and the feeling a
+                visual leaves behind.
               </Paragraph>
             </div>
 
             <div data-about-reveal="true">
               <Paragraph>
-                My work is driven by curiosity and a strong maker mindset. I enjoy building things from the ground up,
-                whether it is a visual concept, a motion system, or a complete experience. Over time, this approach
-                led me from freelance projects to studio collaboration, where I learned how to develop work within
-                larger teams and more complex productions, and how to bring ideas to a professional level of execution.
+                I enjoy building things from the ground up, from the first idea to the final execution. Whether I am
+                developing a visual concept, animating a product story, or shaping a broader digital experience, I
+                approach each project with a combination of artistic sensitivity, technical precision, and strong
+                curiosity.
               </Paragraph>
             </div>
 
             <div data-about-reveal="true">
               <Paragraph>
-                Alongside my design work, I co-founded LAPZ, an AR and VR startup focused on creating new ways to
-                experience motorsports through immersive technology. Working on a product from concept to release
-                shaped my thinking beyond visuals and taught me to see creativity as a tool for building systems, not
-                only images.
+                Alongside freelance and studio work, I also co-founded LAPZ, an AR and VR startup focused on new ways
+                of experiencing motorsports through immersive technology. That experience pushed me beyond pure visual
+                output and taught me to think more deeply about products, systems, and how design functions in a real
+                context.
               </Paragraph>
             </div>
 
             <div data-about-reveal="true">
               <Paragraph>
-                Today I work as a freelance motion and 3D designer, combining an artistic background with product
-                thinking and technical execution. Outside of client work, I spend my time drawing, painting, cooking,
-                building furniture, and experimenting with new ideas, anything that keeps the connection between
-                imagination and making alive.
+                Today, I work across motion, 3D, and visual storytelling, combining an artistic background with product
+                thinking and hands-on execution. Outside of client work, I spend time drawing, painting, cooking,
+                building furniture, and exploring new ideas, anything connected to the process of making.
               </Paragraph>
             </div>
           </div>
@@ -144,19 +143,24 @@ export const About: FC<AboutProps> = ({children, animated = false}) => {
           <div className="flex flex-col gap-[24px]">
             <div data-about-reveal="true">
               <Paragraph>
-                I design and build visual experiences across motion, 3D, and digital media, often working at the
-                intersection of design, technology, and product development. My focus is not on a specific tool or
-                discipline, but on finding the best way to bring an idea to life. Depending on the project, this can
-                mean animation, real-time 3D, video, interactive content, or complete visual systems.
+                I help brands, startups, and products communicate ideas through motion and 3D. This can take the form
+                of product visuals, launch animations, branded storytelling, digital campaigns, or custom visual
+                systems that make a message feel clearer, richer, and more memorable.
               </Paragraph>
             </div>
 
             <div data-about-reveal="true">
               <Paragraph>
-                I enjoy working on projects that go beyond single deliverables and require a broader understanding of
-                the product, the user, and the context. My experience with startups, studio work, and freelance
-                projects taught me to approach design as part of a larger process, where creativity, functionality,
-                and business goals need to work together.
+                My work usually sits at the intersection of design, movement, and technology. Depending on the project,
+                that may mean stylized 3D, cinematic product animation, interactive content, or motion-led visuals
+                designed to support a wider brand or product experience.
+              </Paragraph>
+            </div>
+
+            <div data-about-reveal="true">
+              <Paragraph>
+                I am most interested in projects where visuals do more than decorate, where they explain, elevate, and
+                give a product or idea stronger emotional impact.
               </Paragraph>
             </div>
           </div>

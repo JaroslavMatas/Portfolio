@@ -38,7 +38,7 @@ const shot: EntryShot = {
   title: 'Planeta Liga - KAP',
   variant: 'shot',
   videos: {
-    mp4: '/webm/shot-small-9.mp4',
+    mp4: '/mp4/shot-small-9.mp4',
     webm: '/webm/shot-small-9.webm',
   },
 }

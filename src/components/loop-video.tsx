@@ -8,9 +8,17 @@ export type LoopVideoProps = {
   poster?: string
   muted?: boolean
   autoPlay?: boolean
+  fit?: 'cover' | 'contain'
 }
 
-export const LoopVideo: FC<LoopVideoProps> = ({srcMp4, srcWebm, poster, muted = true, autoPlay = true}) => {
+export const LoopVideo: FC<LoopVideoProps> = ({
+  srcMp4,
+  srcWebm,
+  poster,
+  muted = true,
+  autoPlay = true,
+  fit = 'cover',
+}) => {
   const ref = useRef<HTMLVideoElement | null>(null)
 
   useEffect(() => {
@@ -35,7 +43,7 @@ export const LoopVideo: FC<LoopVideoProps> = ({srcMp4, srcWebm, poster, muted = 
   return (
     <video
       ref={ref}
-      className="block w-full h-full object-cover rounded-[20px]"
+      className={`block w-full h-full rounded-[20px] ${fit === 'contain' ? 'object-contain' : 'object-cover'}`}
       playsInline
       loop
       muted={muted}

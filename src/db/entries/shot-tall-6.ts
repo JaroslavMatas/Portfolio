@@ -38,7 +38,7 @@ const shot: EntryShot = {
   title: 'Prager’s Soda Explorer Animation',
   variant: 'shot',
   videos: {
-    mp4: '/webm/shot-tall-6.mp4',
+    mp4: '/mp4/shot-tall-6.mp4',
     webm: '/webm/shot-tall-6.webm',
   },
 }

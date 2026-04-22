@@ -38,7 +38,7 @@ const shot: EntryShot = {
   title: '9Viper Belt Drop Animation',
   variant: 'shot',
   videos: {
-    mp4: '/webm/shot-tall-3.mp4',
+    mp4: '/mp4/shot-tall-3.mp4',
     webm: '/webm/shot-tall-3.webm',
   },
 }

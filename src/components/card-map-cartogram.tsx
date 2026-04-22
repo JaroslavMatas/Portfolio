@@ -20,38 +20,45 @@ export const CardMapCartogram: FC<CardMapCartogramProps> = ({children}) => {
 
     const el = ref.current
 
-    const ctx = gsap.context(() => {
-      el.addEventListener('mouseenter', () => {
-        gsap.killTweensOf(el)
+    const handleMouseEnter = () => {
+      gsap.killTweensOf(el)
 
-        gsap.to(el, {
-          duration: 0.6,
-          ease: 'power3.out',
-          scale: 1.1,
-          transformOrigin: 'center center',
-        })
+      gsap.to(el, {
+        duration: 0.6,
+        ease: 'power3.out',
+        scale: 1.1,
+        transformOrigin: 'center center',
       })
+    }
 
-      el.addEventListener('mouseleave', () => {
-        gsap.killTweensOf(el)
+    const handleMouseLeave = () => {
+      gsap.killTweensOf(el)
 
-        gsap.to(el, {
-          duration: 0.6,
-          ease: 'power3.inOut',
-          scale: 1,
-        })
+      gsap.to(el, {
+        duration: 0.6,
+        ease: 'power3.inOut',
+        scale: 1,
       })
-    }, ref)
+    }
 
-    return () => ctx.revert()
+    el.addEventListener('mouseenter', handleMouseEnter)
+    el.addEventListener('mouseleave', handleMouseLeave)
+
+    const ctx = gsap.context(() => {}, ref)
+
+    return () => {
+      el.removeEventListener('mouseenter', handleMouseEnter)
+      el.removeEventListener('mouseleave', handleMouseLeave)
+      ctx.revert()
+    }
   }, [])
 
   return (
     <div className="flex flex-grow overflow-hidden relative rounded-2xl z-10">
-      <div className="absolute inset-[1px] overflow-hidden rounded-2xl">
+      <div className="absolute inset-0 overflow-hidden rounded-2xl">
         <div
           ref={ref}
-          className="absolute inset-[1px] will-change-transform [transform-style:preserve-3d] cursor-pointer transform-gpu"
+          className="absolute inset-0 will-change-transform [transform-style:preserve-3d] cursor-pointer transform-gpu"
         >
           <a href={Config.location.mapUrl} target="_blank" className="rounded-2xl relative w-full h-full flex flex-1">
             <Image

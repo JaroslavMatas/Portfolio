@@ -8,12 +8,12 @@ const shot: EntryShot = {
   },
   area: 's1',
   description:
-    'A looping animation showcasing the car’s transformation from sketch to wireframe to full render, featured in the call-to-action section.',
+    'A looping 3D animation created for the call-to-action section of the Lapz website, showing the car evolving from sketch to wireframe to final render.',
   image: '/jpg/shot-small-1.jpg',
   properties: [
     {
       name: 'Product',
-      value: 'Lapz - Watch F1 in visionoS',
+      value: 'Lapz - Watch F1 in visionOS',
     },
     {
       name: 'Project',
@@ -38,7 +38,7 @@ const shot: EntryShot = {
   title: 'Lapz - CTA Section',
   variant: 'shot',
   videos: {
-    mp4: '/webm/shot-small-1.mp4',
+    mp4: '/mp4/shot-small-1.mp4',
     webm: '/webm/shot-small-1.webm',
   },
 }

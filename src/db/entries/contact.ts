@@ -10,19 +10,15 @@ const contact: EntryContact = {
   contacts: [
     {
       type: 'Email',
-      url: 'mailto:hello@janblazej.dev',
+      url: 'mailto:jaroslavmatas3090@gmail.com',
     },
     {
       type: 'Instagram',
-      url: 'https://www.instagram.com/hzblj',
+      url: 'https://www.instagram.com/jaroslavmatas_/',
     },
     {
       type: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/hzblj',
-    },
-    {
-      type: 'GitHub',
-      url: 'http://github.com/hzblj',
+      url: 'https://www.linkedin.com/in/jaroslav-matas-4a4b05250/',
     },
   ],
   slug: 'contact',

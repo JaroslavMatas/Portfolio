@@ -38,7 +38,7 @@ const shot: EntryShot = {
   title: '9Viper x Ondrej Stara DRS Active Ring',
   variant: 'shot',
   videos: {
-    mp4: '/webm/shot-tall-7.mp4',
+    mp4: '/mp4/shot-tall-7.mp4',
     webm: '/webm/shot-tall-7.webm',
   },
 }

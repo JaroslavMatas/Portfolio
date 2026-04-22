@@ -43,6 +43,8 @@ export type EntryShot = {
   image: string
   videos?: EntryShotVideos
   link?: string
+  cardUrl?: string
+  cardTarget?: '_blank' | '_self'
   area: ShotArea
   properties: EntryShotProperties
   variant: Extract<EntryVariant, 'shot'>
@@ -112,16 +114,29 @@ export type EntryPainting = {
   variant: Extract<EntryVariant, 'painting'>
   slug: string
   image: string
+  url?: string
   animation?: AnimationConfig
 }
 
-export type Entry = EntryShot | EntryContact | EntryMap | EntryCV | EntryProfile | EntryGallery | EntryTechnologies | EntryAbout | EntryPainting
+export type Entry =
+  | EntryShot
+  | EntryContact
+  | EntryMap
+  | EntryCV
+  | EntryProfile
+  | EntryGallery
+  | EntryTechnologies
+  | EntryAbout
+  | EntryPainting
 
 export type Entries = Entry[]
 
 export type CVSectionProject = {
   name: string
+  secondaryName?: string
+  suffix?: string
   url: string
+  secondaryUrl?: string
   position: string
   technologies: string[]
   paragraphs: string[]

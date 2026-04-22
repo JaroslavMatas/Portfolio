@@ -7,6 +7,6 @@ export default function robots() {
         userAgent: '*',
       },
     ],
-    sitemap: 'https://janblazej.dev/sitemap.xml',
+    sitemap: 'https://jaroslavmatas.com/sitemap.xml',
   }
 }

@@ -38,7 +38,7 @@ const shot: EntryShot = {
   title: 'Lapz - F1 Circuits Design',
   variant: 'shot',
   videos: {
-    mp4: '/webm/shot-small-10.mp4',
+    mp4: '/mp4/shot-small-10.mp4',
     webm: '/webm/shot-small-10.webm',
   },
 }

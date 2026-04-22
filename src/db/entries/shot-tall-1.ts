@@ -8,7 +8,7 @@ const shot: EntryShot = {
   },
   area: 't1',
   description:
-    'Personal exploration inspired by the idea of a dream car suspended in an unreal, atmospheric space. The animation features a Mercedes-Benz floating among clouds, wrapped in translucent plastic tightened by thin straps. The focus of the piece was on achieving a believable simulation of the plastic material while maintaining a soft, dreamlike mood. I developed the concept and handled the full process from simulation to final render.',
+    'A personal 3D exploration featuring a Mercedes-Benz suspended in a dreamlike environment, wrapped in translucent plastic tightened by thin straps. The focus of the piece was on achieving a believable plastic simulation while maintaining a soft, atmospheric mood. I developed the concept and handled the full process from simulation to final render.',
   image: '/jpg/shot-tall-1.jpg',
   properties: [
     {
@@ -29,7 +29,7 @@ const shot: EntryShot = {
   title: 'Mercedes-Benz Physics Exploration',
   variant: 'shot',
   videos: {
-    mp4: '/webm/shot-tall-1.mp4',
+    mp4: '/mp4/shot-tall-1.mp4',
     webm: '/webm/shot-tall-1.webm',
   },
 }
