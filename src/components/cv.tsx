@@ -319,12 +319,48 @@ const SectionLanguagesAndLocations: FC = () => (
   </div>
 )
 
-export const CV: FC = () => {
+type CVProps = {
+  animated?: boolean
+  children?: ReactNode
+}
+
+export const CV: FC<CVProps> = ({animated = false, children}) => {
+  const ref = useRef<HTMLDivElement>(null)
+
+  useLayoutEffect(() => {
+    if (!animated || !ref.current) {
+      return
+    }
+
+    const ctx = gsap.context(() => {
+      const nodes = ref.current?.querySelectorAll('[data-cv-reveal="true"], [data-cv-section="true"]')
+
+      if (!nodes || nodes.length === 0) {
+        return
+      }
+
+      gsap.set(nodes, {
+        opacity: 0,
+        y: 12,
+      })
+
+      gsap.to(nodes, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.04,
+        ease: 'power2.out',
+      })
+    }, ref)
+
+    return () => ctx.revert()
+  }, [animated])
+
   const workExperience = cv.workExperience
   const sideProjects = cv.sideProjects
 
   return (
-    <div className="max-w-[572px] flex flex-col gap-[56px]">
+    <div ref={ref} className="max-w-[572px] flex flex-col gap-[56px]">
       <h1 className="text-[14px] text-neutral-900">Work Experience</h1>
 
       {workExperience.map((section, index) => (
@@ -343,7 +379,7 @@ export const CV: FC = () => {
       <SectionLanguagesAndLocations />
 
       <div data-cv-section="true" className="flex justify-center">
-        <LinkExternal url="/pdf/cv.pdf" trackingCategory="cv_download" trackingName="Download CV in PDF">
+        <LinkExternal url="/pdf/cv.pdf">
           <span
             data-cv-reveal="true"
             className="text-[14px] font-normal tracking-[0px] bg-[linear-gradient(180deg,#171717_0%,rgba(23,23,23,0.65)_100%)] bg-clip-text text-transparent"
@@ -352,6 +388,8 @@ export const CV: FC = () => {
           </span>
         </LinkExternal>
       </div>
+
+      {children}
     </div>
   )
 }
