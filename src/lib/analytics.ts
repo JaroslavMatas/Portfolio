@@ -64,6 +64,6 @@ export function trackProjectView(projectTitle: string): void {
 
 declare global {
   interface Window {
-    gtag?: (command: string, targetId: string, config?: Record<string, unknown>) => void
+    gtag?: (...args: any[]) => void
   }
 }
