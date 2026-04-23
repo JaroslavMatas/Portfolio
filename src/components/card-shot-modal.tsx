@@ -61,7 +61,7 @@ export const CardShotModal: FC<CardShotModalProps> = ({
         <div className="px-[20px] md:px-8 pt-[20px] md:pt-8 pb-[20px] md:pb-8">
           <div className="flex flex-col md:grid md:grid-cols-[405px_minmax(0,1fr)] md:gap-8 md:items-start">
             <div className="flex justify-center">
-              <div className="relative h-[420px] md:h-[720px] aspect-[9/16] rounded-[28px] flex justify-center items-center overflow-hidden border-[0.75px] border-neutral-900/12 bg-neutral-100">
+              <div className="relative w-full aspect-[9/16] md:w-[405px] md:h-[720px] md:aspect-auto rounded-[28px] flex justify-center items-center overflow-hidden border-[0.75px] border-neutral-900/12 bg-neutral-100">
                 {videos ? (
                   <div className="absolute inset-0 overflow-hidden">
                     <LoopVideo srcMp4={videos.mp4} srcWebm={videos.webm} poster={image} fit="cover" />
