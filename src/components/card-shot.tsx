@@ -141,6 +141,7 @@ export const CardShot: FC<EntryShot> = ({
     <Fragment>
       <div
         ref={refCard}
+        data-area={area}
         className="relative w-full shrink-0 flex h-full contain-intrinsic overflow-hidden bg-card-surface rounded-2xl border border-solid border-neutral-900/10 transform-3d bg-neutral-100"
         style={{gridArea: area}}
       >

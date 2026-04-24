@@ -77,6 +77,7 @@ export const CardCV: FC<EntryCV> = ({area, animation}) => {
     <Fragment>
       <div
         ref={refCard}
+        data-area={area}
         className="w-full shrink-0 flex h-full contain-intrinsic overflow-hidden card card-cv"
         style={{gridArea: area, transformStyle: 'preserve-3d'}}
       >

@@ -16,6 +16,7 @@ export const CardMap: FC<EntryMap> = ({area, animation}) => {
   return (
     <div
       ref={refCard}
+      data-area={area}
       className="w-full shrink-0 flex h-full contain-intrinsic card card-map overflow-hidden"
       style={{gridArea: area, transformStyle: 'preserve-3d'}}
     >

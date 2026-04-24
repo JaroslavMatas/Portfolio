@@ -25,6 +25,7 @@ export const CardContact: FC<EntryContact> = ({area, contacts, animation}) => {
   return (
     <div
       ref={refCard}
+      data-area={area}
       className="w-full shrink-0 flex h-full contain-intrinsic overflow-hidden card z-10"
       style={{gridArea: area, transformStyle: 'preserve-3d'}}
     >

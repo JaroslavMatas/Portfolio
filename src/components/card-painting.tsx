@@ -38,6 +38,7 @@ export const CardPainting = ({area, animation, image, url}: EntryPainting) => {
     <Link
       href={url || '#'}
       ref={refCard}
+      data-area={area}
       target="_blank"
       rel="noopener noreferrer"
       className="card relative block overflow-hidden min-h-0 min-w-0"

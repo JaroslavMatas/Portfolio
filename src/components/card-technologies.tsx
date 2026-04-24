@@ -14,6 +14,7 @@ export const CardTechnologies = ({area, animation}: EntryTechnologies) => {
   return (
     <div
       ref={refCard}
+      data-area={area}
       className="w-full shrink-0 flex h-full contain-intrinsic overflow-hidden card"
       style={{gridArea: area, transformStyle: 'preserve-3d'}}
     >
