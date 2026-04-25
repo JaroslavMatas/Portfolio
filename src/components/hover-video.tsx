@@ -1,6 +1,6 @@
 'use client'
 
-import {FC, PointerEvent, useCallback, useRef} from 'react'
+import {FC, PointerEvent, useCallback, useRef, useState} from 'react'
 
 export type HoverVideoProps = {
   srcMp4: string
@@ -20,6 +20,7 @@ export const HoverVideo: FC<HoverVideoProps> = ({
   preload = 'none',
 }) => {
   const ref = useRef<HTMLVideoElement | null>(null)
+  const [isPlaying, setIsPlaying] = useState(false)
 
   const play = useCallback(async (e: PointerEvent) => {
     if (e.pointerType !== 'mouse') {
@@ -41,6 +42,7 @@ export const HoverVideo: FC<HoverVideoProps> = ({
         return
       }
       await el.play()
+      setIsPlaying(true)
     } catch (err) {
       // biome-ignore lint/suspicious/noConsole: Log video warning
       console.warn(err)
@@ -64,6 +66,7 @@ export const HoverVideo: FC<HoverVideoProps> = ({
       }
 
       el.currentTime = 0
+      setIsPlaying(false)
     } catch (e) {
       // biome-ignore lint/suspicious/noConsole: Log video warning
       console.warn(e)
@@ -92,6 +95,16 @@ export const HoverVideo: FC<HoverVideoProps> = ({
         <source src={srcMp4} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+      {poster && (
+        <img
+          src={poster}
+          alt=""
+          aria-hidden="true"
+          className={`absolute inset-0 block w-full h-full object-cover rounded-2xl pointer-events-none transition-opacity duration-150 ${
+            isPlaying ? 'opacity-0' : 'opacity-100'
+          }`}
+        />
+      )}
     </div>
   )
 }
