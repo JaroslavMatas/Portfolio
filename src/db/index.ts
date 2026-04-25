@@ -4,8 +4,6 @@ import gallery from './entries/gallery'
 import map from './entries/map'
 import profile from './entries/profile'
 import large1 from './entries/shot-large-1'
-import large2 from './entries/shot-large-2'
-import large3 from './entries/shot-large-3'
 import small1 from './entries/shot-small-1'
 import small2 from './entries/shot-small-2'
 import small3 from './entries/shot-small-3'
@@ -25,16 +23,6 @@ import small16 from './entries/shot-small-16'
 import small17 from './entries/shot-small-17'
 import small18 from './entries/shot-small-18'
 import small19 from './entries/shot-small-19'
-import small20 from './entries/shot-small-20'
-import small21 from './entries/shot-small-21'
-import small22 from './entries/shot-small-22'
-import small23 from './entries/shot-small-23'
-import small24 from './entries/shot-small-24'
-import small25 from './entries/shot-small-25'
-import small26 from './entries/shot-small-26'
-import small27 from './entries/shot-small-27'
-import small28 from './entries/shot-small-28'
-import small29 from './entries/shot-small-29'
 import tall1 from './entries/shot-tall-1'
 import tall2 from './entries/shot-tall-2'
 import tall3 from './entries/shot-tall-3'
@@ -56,8 +44,6 @@ export const entries: Entries = [
   map,
   profile,
   large1,
-  large2,
-  large3,
   small1,
   small10,
   small11,
@@ -70,15 +56,6 @@ export const entries: Entries = [
   small18,
   small19,
   small2,
-  small20,
-  small21,
-  small22,
-  small23,
-  small24,
-  small25,
-  small26,
-  small27,
-  small28,
   small3,
   small4,
   small5,
@@ -86,7 +63,6 @@ export const entries: Entries = [
   small7,
   small8,
   small9,
-  small29,
   tall1,
   tall2,
   tall3,
