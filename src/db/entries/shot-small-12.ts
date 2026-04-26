@@ -37,6 +37,10 @@ const shot: EntryShot = {
   slug: 'lapz-x-motogp-ar-concept',
   title: 'Lapz x MotoGP AR Concept',
   variant: 'shot',
+  videos: {
+    mp4: '/mp4/shot-small-12.mp4',
+    webm: '/webm/shot-small-12.webm',
+  },
 }
 
 export default shot
