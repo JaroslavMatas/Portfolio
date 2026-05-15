@@ -25,7 +25,7 @@ const shot: EntryShot = {
     },
     {
       name: 'Link',
-      url: 'https://www.ambi.cz/',
+      url: 'https://sberatelskekarty.ambi.cz/',
       value: 'ambi.cz',
     },
     {
